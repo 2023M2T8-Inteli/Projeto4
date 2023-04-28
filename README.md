@@ -8,14 +8,13 @@
 
 ## Nome do grupo
 
-## Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 7</a>
+## Integrantes:
+- <a href="https://www.linkedin.com/in/eduarda-cardoso-de-souza-8bb802268/">Eduarda Cardoso de Souza</a> 
+- <a href="https://www.linkedin.com/in/fernando-machado-84673a212/">Fernando Machado</a>
+- <a href="https://www.linkedin.com/in/gabriellysilvavitor/">Gabrielly Vitor</a>
+- <a href="https://www.linkedin.com/in/luan-ramos-de-mello-253b28268/">Luan Ramos</a> 
+- <a href="https://www.linkedin.com/">Mário Ventura</a> 
+- <a href="hhttps://www.linkedin.com/in/rodrigo-sales-07/">Rodrigo Sales</a>
 
 ## 📝 Descrição
 
