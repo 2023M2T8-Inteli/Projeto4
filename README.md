@@ -14,7 +14,7 @@
 - <a href="https://www.linkedin.com/in/gabriellysilvavitor/">Gabrielly Vitor</a>
 - <a href="https://www.linkedin.com/in/luan-ramos-de-mello-253b28268/">Luan Ramos</a> 
 - <a href="https://www.linkedin.com/">Mário Ventura</a> 
-- <a href="hhttps://www.linkedin.com/in/rodrigo-sales-07/">Rodrigo Sales</a>
+- <a href="https://www.linkedin.com/in/rodrigo-sales-07/">Rodrigo Sales</a>
 
 ## 📝 Descrição
 
