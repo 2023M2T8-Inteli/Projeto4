@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.get('/info', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/src/Frontend/info.html');
-    let sql = `SELECT * FROM {(esperando o banco)}`;
+    var sql = `SELECT * FROM {(esperando o banco)}`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -29,11 +29,10 @@ app.get('/info', (req, res) => {
 });
 
 app.get('/choque1', (req, res) => {
-<<<<<<< Updated upstream
   res.setHeader('Access-Control-Allow-Origin', '*');
   //res.sendFile(__dirname+'/src/Frontend/choques.html');
-  let id = req.query.id;
-  let sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
+  var id = req.query.id;
+  var sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
   db.all(sql, [], (err, rows) => {
       if (err) {
           throw err;
@@ -43,26 +42,23 @@ app.get('/choque1', (req, res) => {
 
 
 
-  
-=======
-    res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    let id = req.query.id;
-    let sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
+    var id = req.query.id;
+    var sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
         }
         res.send(rows);
     });
->>>>>>> Stashed changes
 });
 
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    let id = req.query.id;
-    let sql = `SELECT * FROM Choque2 WHERE id_choque2=1`;
+    var id = req.query.id;
+    var sql = `SELECT * FROM Choque2 WHERE id_choque2=1`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -74,8 +70,8 @@ app.get('/choque2', (req, res) => {
 app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    let id = req.query.id;
-    let sql = `SELECT * FROM Pico WHERE id_pico=1`;
+    var id = req.query.id;
+    var sql = `SELECT * FROM Pico WHERE id_pico=1`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -87,8 +83,8 @@ app.get('/pico', (req, res) => {
 app.get('/viagens', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    let id = req.query.id;
-    let sql = `SELECT * FROM Viagem WHERE id_viagem=1`;
+    var id = req.query.id;
+    var sql = `SELECT * FROM Viagem WHERE id_viagem=1`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -100,20 +96,20 @@ app.get('/viagens', (req, res) => {
 app.post('/inserePico', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    let id_pico = req.body.id_pico
-    let id_viagem = req.body.id_viagem
-    let tipo_vagao = req.body.tipo_vagao text
-    let data_hora = req.body.data_hora
-    let latitude = req.body.latitude
-    let longitude = req.body.longitude
-    let velocidade = req.body.velocidade
-    let posicao = req.body.posicao
-    let placa_virtual = req.body.placa_virtual text
-    let trecho = req.body.trecho text
-    let engate = req.body.engate
-    let delta = req.body.delta
-    let act = req.body.act
-    let peg = req.body.peg
+    var id_pico = req.body.id_pico
+    var id_viagem = req.body.id_viagem
+    var tipo_vagao = req.body.tipo_vagao
+    var data_hora = req.body.data_hora
+    var latitude = req.body.latitude
+    var longitude = req.body.longitude
+    var velocidade = req.body.velocidade
+    var posicao = req.body.posicao
+    var placa_virtual = req.body.placa_virtual
+    var trecho = req.body.trecho
+    var engate = req.body.engate
+    var delta = req.body.delta
+    var act = req.body.act
+    var peg = req.body.peg
     sql = `INSERT INTO Viagem () VALUES (${id_pico}, ${id_viagem}, ${tipo_vagao}, ${max_forca}, )`;
     db.run(sql, [], err => {
         if (err) {
