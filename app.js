@@ -96,30 +96,75 @@ app.get('/viagens', (req, res) => {
 app.post('/inserePico', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var id_pico = req.body.id_pico
-    var id_viagem = req.body.id_viagem
-    var tipo_vagao = req.body.tipo_vagao
-    var data_hora = req.body.data_hora
-    var latitude = req.body.latitude
-    var longitude = req.body.longitude
-    var velocidade = req.body.velocidade
-    var posicao = req.body.posicao
-    var placa_virtual = req.body.placa_virtual
-    var trecho = req.body.trecho
-    var engate = req.body.engate
-    var delta = req.body.delta
-    var act = req.body.act
-    var peg = req.body.peg
-    sql = `INSERT INTO Viagem () VALUES (${id_pico}, ${id_viagem}, ${tipo_vagao}, ${max_forca}, )`;
+    var id_pico = req.body.id_pico;
+    var id_viagem = req.body.id_viagem;
+    var tipo_vagao = req.body.tipo_vagao;
+    var data_hora = req.body.data_hora;
+    var latitude = req.body.latitude;
+    var longitude = req.body.longitude;
+    var velocidade = req.body.velocidade;
+    var posicao = req.body.posicao;
+    var placa_virtual = req.body.placa_virtual;
+    var trecho = req.body.trecho;
+    var engate = req.body.engate;
+    var delta = req.body.delta;
+    var act = req.body.act;
+    var peg = req.body.peg;
+    sql = `INSERT INTO Pico VALUES (${id_pico}, ${id_viagem}, "${tipo_vagao}", ${data_hora}, ${latitude}, ${longitude}, ${velocidade}, ${posicao}, "${placa_virtual}", "${trecho}", ${engate}, ${delta}, ${act}, ${peg})`;
     db.run(sql, [], err => {
         if (err) {
             res.send("Erro na gravação: " + err);
         }
         else {
-            res.send("ID cadastrado com sucesso");
+            res.send("Pico cadastrado com sucesso");
         }
     });
 });
+
+
+app.get("/deletPico", (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var id_pico = req.query.id_pico;
+    var sql = `DELETE * FROM Pico WHERE id_pico = ${id_pico}`;
+    db.run(sql, [], (err,rows) => {
+        if(err){
+            throw err;  
+        }
+        console.log("Registro deletado com sucesso");
+        console.log(rows)
+    });
+});
+
+app.put('/atualizaPico', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var id_pico = req.body.id_pico
+    var tipo_vagao = req.body.tipo_vagao;
+    var data_hora = req.body.data_hora;
+    var latitude = req.body.latitude;
+    var longitude = req.body.longitude;
+    var velocidade = req.body.velocidade;
+    var posicao = req.body.posicao;
+    var placa_virtual = req.body.placa_virtual;
+    var trecho = req.body.trecho;
+    var engate = req.body.engate;
+    var delta = req.body.delta;
+    var act = req.body.act;
+    var peg = req.body.peg;
+    var sql = `UPDATE Pico SET tipo_vagao="${tipo_vagao}", data_hora=${data_hora}, latitude=${latitude}, longitude=${longitude}, velocidade=${velocidade}, posicao=${posicao}, placa_virtual="${placa_virtual}", trecho="${trecho}", engate=${engate}, delta=${delta}, act=${act}, peg=${peg} WHERE id_pico = ${id_pico}`;
+    db.run(sql, [], (err,rows) => {
+        if (err) {
+            res.send("Erro na atualização: " + err);
+        }
+        else {
+            res.send("Pico atualizado com sucesso")
+            console.log(rows);
+        }
+    });
+});
+
+
 
 app.listen(port, hostname, () => {
     console.log('Servidor rodando em http://' + hostname + ':' + port);
