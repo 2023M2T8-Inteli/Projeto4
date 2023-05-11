@@ -40,6 +40,10 @@ app.get('/choque1', (req, res) => {
       }
       res.send(rows);
   });
+
+
+
+  
 });
 
 app.get('/choque2', (req, res) => {
