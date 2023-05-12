@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.get('/info', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/src/Frontend/info.html');
-    var sql = `SELECT * FROM {(esperando o banco)}`;
+    var sql = `SELECT * FROM Viagem`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
