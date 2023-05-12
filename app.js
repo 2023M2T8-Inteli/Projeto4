@@ -122,11 +122,13 @@ app.post('/inserePico', (req, res) => {
 });
 
 
-app.get("/deletPico", (req, res) => {
+app.post("/deletPico", (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var id_pico = req.query.id_pico;
-    var sql = `DELETE * FROM Pico WHERE id_pico = ${id_pico}`;
+    var id_pico = parseInt(req.body.id_pico);
+    console.log(parseInt(id_pico))
+    var sql = `DELETE FROM Pico WHERE id_pico = ${id_pico}`;
+    //console.log(sql,'hahahahah');
     db.run(sql, [], (err,rows) => {
         if(err){
             throw err;  
