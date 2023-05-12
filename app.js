@@ -31,34 +31,21 @@ app.get('/info', (req, res) => {
 app.get('/choque1', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   //res.sendFile(__dirname+'/src/Frontend/choques.html');
-  var id = req.query.id;
-  var sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
+  var id_choque1 = req.query.id;
+  var sql = `SELECT * FROM Choque1 WHERE id_choque1=${id_choque1}`;
   db.all(sql, [], (err, rows) => {
       if (err) {
           throw err;
       }
       res.send(rows);
   });
-
-
-
-res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    var id = req.query.id;
-    var sql = `SELECT * FROM Choque1 WHERE id_choque1=1`;
-    db.all(sql, [], (err, rows) => {
-        if (err) {
-            throw err;
-        }
-        res.send(rows);
-    });
 });
 
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    var id = req.query.id;
-    var sql = `SELECT * FROM Choque2 WHERE id_choque2=1`;
+    var id_choque2 = req.query.id;
+    var sql = `SELECT * FROM Choque2 WHERE id_choque2=${id_choque2}`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -70,8 +57,8 @@ app.get('/choque2', (req, res) => {
 app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    var id = req.query.id;
-    var sql = `SELECT * FROM Pico WHERE id_pico=1`;
+    var id_pico = req.query.id;
+    var sql = `SELECT * FROM Pico WHERE id_pico=${id_pico}`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -83,8 +70,8 @@ app.get('/pico', (req, res) => {
 app.get('/viagens', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
-    var id = req.query.id;
-    var sql = `SELECT * FROM Viagem WHERE id_viagem=1`;
+    var id_viagem = req.query.id;
+    var sql = `SELECT * FROM Viagem WHERE id_viagem=${id_viagem}`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
