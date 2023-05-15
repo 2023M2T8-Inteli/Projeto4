@@ -1,10 +1,11 @@
 body{
     margin: 0;
     padding: 0;
-    background: white;
+    background: rgb(244, 244, 244);
     font-family: Arial;
+    overflow-x: hidden;
 }
-.logo {
+#logo {
     width: 105px;
     height:105px;
     position: absolute;
@@ -41,5 +42,33 @@ body{
     background: #03658C;
 }
 
+#graficos{
+    position: relative;
+    width: 42%;
+    height: 42%;
+    display: inline-block;
+    justify-content: space-between;
+    margin-right: 85px;    
+    left: 55px;
+    top: 40px;
+
+}
+
+#select-button{
+    position: relative;
+    top: 30px;
+    left: 55px;
+    display: flex;
+    gap: 423px;
+}
+.bselect{
+    padding: 3px 60px;
+    text-transform: uppercase;
+    background: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 2px;
+    cursor:pointer;
+}
 
 /* ÁREA DE TESTE */
+
