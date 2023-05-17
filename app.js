@@ -16,9 +16,14 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/analise', (req, res) => {
+    res.sendFile(__dirname + '/src/Frontend/analise.html');
+});
+
+
 app.get('/info', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.sendFile(__dirname + '/src/Frontend/info.html');
+    // res.sendFile(__dirname + '/src/Frontend/analise.html');
     var sql = `SELECT * FROM Viagem`;
     db.all(sql, [], (err, rows) => {
         if (err) {
