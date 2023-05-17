@@ -9,6 +9,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
 app.use(express.static('public'));
+//app.use('/Frontend', express.static(__dirname+'/src/Frontend'));
+//app.use('Backend', express.static(__dirname + '/src/Backend'));
+//app.use('src', express.static(__dirname + '/src'));
+var teste = __dirname + '/src/Frontend';
 
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,7 +21,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/analise', (req, res) => {
-    res.sendFile(__dirname + '/src/Frontend/analise.html');
+    //console.log('/Frontend');
+    res.sendFile('analise.html', { root: teste });
+});
+app.get('/info_medias', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var sql = `SELECT * FROM Viagem`;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
 });
 
 
