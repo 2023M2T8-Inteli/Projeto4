@@ -4,6 +4,7 @@ body{
     background: rgb(244, 244, 244);
     font-family: Arial;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 #logo {
     width: 105px;
@@ -44,11 +45,11 @@ body{
 
 #graficos{
     position: relative;
-    width: 42%;
-    height: 42%;
-    display: inline-block;
+    width: 30%;
+    height: 30%%;
+    display: block;
     justify-content: space-between;
-    margin-right: 85px;    
+    margin-bottom: 10px;    
     left: 55px;
     top: 40px;
 
@@ -70,5 +71,11 @@ body{
     cursor:pointer;
 }
 
+.tabela{
+    position: relative;
+    left: 550px;
+    top: -450px;
+    width: 50%;
+}
 /* ÁREA DE TESTE */
 
