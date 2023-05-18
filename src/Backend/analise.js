@@ -1,5 +1,5 @@
 (()=>{
-    const url = '/analise_medias';
+    const url = '/info_medias';
     fetch(url)
     .then((response) => {
       return response.json();
@@ -10,6 +10,7 @@
       Dados.map(function(Dados) {
         saida += '<strong> '+ `${Dados.max_forca}`+" "+`${Dados.min_forca}`+" "+`${Dados.max_act}`+" "+`${Dados.min_act}`+" "+`${Dados.max_peg}`+" "+`${Dados.min_peg}`+" "+`${Dados.media_valores}`+'</strong>';
   });
+  document.getElementById('tabela').innerHTML = saida;
   const table = document.createElement('table');
   for(let line of Dados){
   const tr = document.createElement('tr');
@@ -50,3 +51,15 @@
       console.log(error);
     });
   })();
+
+
+
+
+
+
+
+
+
+
+
+  

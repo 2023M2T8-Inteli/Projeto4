@@ -9,9 +9,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
 app.use(express.static('public'));
-//app.use('/Frontend', express.static(__dirname+'/src/Frontend'));
-//app.use('Backend', express.static(__dirname + '/src/Backend'));
-//app.use('src', express.static(__dirname + '/src'));
+
+// app.use('Backend/', express.static(__dirname + '/src/Backend'));
+
+
 var teste = __dirname + '/src/Frontend';
 
 app.get('/', (req, res) => {
