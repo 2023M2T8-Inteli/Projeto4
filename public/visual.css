@@ -81,6 +81,7 @@ body{
 
 
 #tabela{
+    font-size: 30px;
     position: absolute; left: 50%; top: 25%;
     background-color:azure;
     text-align: center;
@@ -88,6 +89,11 @@ body{
 }
 td{
     padding: 10px;
+}
+
+th{
+    font-size: 12.2px;
+    text-align: center;
 }
 
 /* ÁREA DE TESTE */
