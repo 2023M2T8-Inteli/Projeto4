@@ -12,18 +12,14 @@ app.use(express.static('public'));
 
 // app.use('Backend/', express.static(__dirname + '/src/Backend'));
 
-
-var teste = __dirname + '/src/Frontend';
-
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/src/Frontend/home.html');
-
 });
 
 app.get('/analise', (req, res) => {
     //console.log('/Frontend');
-    res.sendFile('analise.html', { root: teste });
+    res.sendFile(__dirname + '/public/analise.html');
 });
 app.get('/info_medias', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
