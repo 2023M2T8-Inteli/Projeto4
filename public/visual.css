@@ -4,6 +4,7 @@ body{
     background: rgb(226, 226, 226);
     font-family: Arial;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 #logo {
