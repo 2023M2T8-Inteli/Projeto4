@@ -91,7 +91,9 @@ body {
     background-color: azure;
     text-align: center;
     border: #03658C 3px solid;
+    margin-left: 20%;
 }
+
 
 td {
     padding: 10px;
@@ -102,8 +104,12 @@ th {
     text-align: center;
 }
 
-#grafico_selecionado1 {
-    image-orientation: flip;
+.graficos {
+    transform: rotate(-90deg);
+    width: 18%;
+    height: 18%;
+    margin-right: 8%;
+    margin-left: 8%;
 }
 
 /* ÁREA DE TESTE */
