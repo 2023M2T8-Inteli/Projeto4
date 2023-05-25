@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background: rgb(226, 226, 226);
@@ -7,15 +7,16 @@ body{
     overflow-y: hidden;
 
 }
+
 #logo {
     width: 110px;
-    height:110px;
+    height: 110px;
     position: absolute;
     left: 10px;
     top: -20px;
 }
 
-#navbar ul{
+#navbar ul {
     list-style: none;
     background: rgb(60, 60, 60);
     padding: 0;
@@ -24,11 +25,11 @@ body{
     /*border-radius: px;*/
 }
 
-#navbar li{
+#navbar li {
     display: inline-block;
 }
 
-#navbar a{
+#navbar a {
     text-decoration: none;
     color: white;
     width: 170px;
@@ -40,39 +41,40 @@ body{
     text-align: center;
 }
 
-#navbar a:hover{
+#navbar a:hover {
     background: #3281a0;
 }
 
-#graficos{
+#graficos {
     position: relative;
     width: 30%;
     height: 30%;
     display: block;
     justify-content: space-between;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
     left: 55px;
     top: 40px;
 
 }
 
-#select-button{
+#select-button {
     position: relative;
     top: 30px;
     left: 55px;
     display: flex;
     gap: 423px;
 }
-.bselect{
+
+.bselect {
     padding: 3px 60px;
     text-transform: uppercase;
     background: white;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 2px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.tabela{
+.tabela {
     position: relative;
     left: 550px;
     top: -450px;
@@ -81,45 +83,52 @@ body{
 
 
 
-#tabela{
+#tabela {
     font-size: 30px;
-    position: absolute; left: 50%; top: 25%;
-    background-color:azure;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    background-color: azure;
     text-align: center;
     border: #03658C 3px solid;
 }
-td{
+
+td {
     padding: 10px;
 }
 
-th{
+th {
     font-size: 12.2px;
     text-align: center;
 }
 
-/* ÁREA DE TESTE */
-
-.paragrafo h1{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    
+#grafico_selecionado1 {
+    image-orientation: flip;
 }
 
-.paragrafo{
+/* ÁREA DE TESTE */
+
+.paragrafo h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+
+}
+
+.paragrafo {
     position: absolute;
     top: 100px;
     display: flex;
     align-items: center;
 }
-.paragrafo img{
+
+.paragrafo img {
     margin-right: 10px;
     position: relative;
     top: -10px;
 }
 
 
-.paragrafo p{
+.paragrafo p {
     padding: 3%;
     text-align: justify;
 }
-
