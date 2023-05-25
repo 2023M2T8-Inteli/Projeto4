@@ -32,55 +32,32 @@
       </div>
             
       </nav>
-      
-    
-    <div id="select-button">
-      <select class="bselect">
-        <option value="opcao1" selected>Opção 1</option>
-        <option value="opcao2">Opção 2</option>
-        <option value="opcao3">Opção 3</option>
-      </select>
-      <!-- <select class="bselect">
-        <option value="opcao1"selected class="">Opção 1</option>
-        <option value="opcao2">Opção 2</option>
-        <option value="opcao3">Opção 3</option>
-      </select> -->
-    </div>
-
   </nav>
 
 
   <div>
-    <select id="photo-dropdown">
-      <option value="graficos/grafico1.png">Photo 1</option>
-      <option value="graficos/grafico2.png">Photo 2</option>
-      <option value="graficos/image-removebg-preview (1).png">Photo 3</option>
-      <option value="graficos/Tiles.png">Photo 4</option>
+    <select id="menu_dropdown">
+      <option value="VagaoE">Vagão E</option>
+      <option value="VagaoF">Vagão F</option>
     </select>
 
-    <img id="selected-photo1" src="graficos/grafico1.png">
-    <img id="selected-photo2" src="graficos/grafico2.png">
+    <img id="grafico_selecionado1" src="graficos/grafico1.png">
+    <img id="grafico_selecionado2" src="graficos/grafico2.png">
 
     <script>
-      const dropdown = document.getElementById('photo-dropdown');
-      const selectedPhoto1 = document.getElementById('selected-photo1');
-      const selectedPhoto2 = document.getElementById('selected-photo2');
+      const dropdown = document.getElementById('menu_dropdown');
+      const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
+      const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
 
       dropdown.addEventListener('change', () => {
-        const selectedValue = dropdown.value;
+        const valorSelecionado = dropdown.value;
 
-        if (selectedValue === "graficos/grafico1.png") {
-          selectedPhoto1.src = "graficos/grafico1.png";
-          selectedPhoto2.src = "graficos/grafico2.png";
-        } else if (selectedValue === "graficos/grafico2.png") {
-          selectedPhoto1.src = "graficos/grafico2.png";
-          selectedPhoto2.src = "graficos/grafico1.png";
-        } else if (selectedValue === "graficos/image-removebg-preview (1).png") {
-          selectedPhoto1.src = "graficos/image-removebg-preview (1).png";
-          selectedPhoto2.src = "graficos/Tiles.png";
-        } else if (selectedValue === "graficos/Tiles.png") {
-          selectedPhoto1.src = "graficos/Tiles.png";
-          selectedPhoto2.src = "graficos/image-removebg-preview (1).png";
+        if (valorSelecionado === "VagaoE") {
+          graficoSelecionado1.src = "graficos/grafico1.png";
+          graficoSelecionado2.src = "graficos/grafico2.png";
+        } else if (valorSelecionado === "VagaoF") {
+          graficoSelecionado1.src = "graficos/grafico2.png";
+          graficoSelecionado2.src = "graficos/grafico1.png";
         }
       });
     </script>
