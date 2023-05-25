@@ -36,28 +36,36 @@
 
 
   <div>
-    <select id="menu_dropdown">
+    <select id="menu_viagem">
+      <option value="Viagem1">Viagem 1</option>
+      <option value="Viagem2">Viagem 2</option>
+      <option value="Viagem3">Viagem 3</option>
+      <option value="Viagem4">Viagem 4</option>
+      <option value="Viagem5">Viagem 5</option>
+    </select>
+
+    <select id="menu_vagao">
       <option value="VagaoE">Vagão E</option>
       <option value="VagaoF">Vagão F</option>
     </select>
 
-    <img id="grafico_selecionado1" src="graficos/grafico1.png">
-    <img id="grafico_selecionado2" src="graficos/grafico2.png">
+    <img id="grafico_selecionado1" src="graficos/Markov - Viagem 1 - E - act.bmp">
+    <img id="grafico_selecionado2" src="graficos/Markov - Viagem 1 - E - forca.bmp">
 
     <script>
-      const dropdown = document.getElementById('menu_dropdown');
+      const vagao = document.getElementById('menu_vagao');
       const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
       const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
 
-      dropdown.addEventListener('change', () => {
-        const valorSelecionado = dropdown.value;
+      vagao.addEventListener('change', () => {
+        const valorSelecionado = vagao.value;
 
         if (valorSelecionado === "VagaoE") {
-          graficoSelecionado1.src = "graficos/grafico1.png";
-          graficoSelecionado2.src = "graficos/grafico2.png";
+          graficoSelecionado1.src = "graficos/Markov - Viagem 1 - E - act.bmp";
+          graficoSelecionado2.src = "graficos/Markov - Viagem 1 - E - forca.bmp";
         } else if (valorSelecionado === "VagaoF") {
-          graficoSelecionado1.src = "graficos/grafico2.png";
-          graficoSelecionado2.src = "graficos/grafico1.png";
+          graficoSelecionado1.src = "graficos/Markov - Viagem 1 - F - act.bmp";
+          graficoSelecionado2.src = "graficos/Markov - Viagem 1- F - forca.bmp";
         }
       });
     </script>
