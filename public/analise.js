@@ -16,7 +16,7 @@ fetch(url)
   const table = document.createElement('table');
   //var tr = document.createElement('tr');
   var th  = document.createElement('th')
-  th.innerHTML = "<td>Max Força |</td><td>Min Força |</td><td>Max Act |</td><td>Min Act |</td><td>Max Peg |</td><td>Min Peg |</td><td>Media Valores </td>"
+  th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg  |  </td><td>Media Valores </td>"
   tabela.appendChild(th);
 
   for(let line of Dados){
