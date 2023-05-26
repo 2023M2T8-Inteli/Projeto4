@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.sendFile(__dirname + '/src/Frontend/home.html');
+    res.sendFile(__dirname + '/public/paghome.html');
 });
 
 app.get('/analise', (req, res) => {
