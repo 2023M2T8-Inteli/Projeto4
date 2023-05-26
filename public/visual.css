@@ -10,7 +10,7 @@ body {
 
     /* Foi comentado porque estava bloqueando o scroll da página */
     /* overflow-x: hidden;
-    overflow-y: hidden; */
+    overflow-y: hidden; */     
 
 }
 
@@ -148,7 +148,8 @@ th {
 .paragrafo h1 {
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
-
+    position: absolute;
+    top: 0px;
 }
 
 .paragrafo {
@@ -166,6 +167,7 @@ th {
 
 
 .paragrafo p {
-    padding: 3%;
+    margin-top: 30px;
+    padding: 3% ;
     text-align: justify;
-}
+}   
