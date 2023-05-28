@@ -29,9 +29,9 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
   &emsp;| T8_G4_V3.0_Web_application_document.pdf <br>
   &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
-|--> src<br>
-  &emsp;|--> Backend<br>
-  &emsp;|--> Public (Frontend)<br>
+|--> Banco_de_dados<br>
+|--> Public (Frontend)<br>
+|--> app.js<br>
 | readme.md<br>
 | license.txt
 
