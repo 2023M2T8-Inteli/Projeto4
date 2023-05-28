@@ -24,26 +24,14 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
 
 ## 📁 Estrutura de pastas
 
-```
-Alunos inteli (remover essa observação do readme.md após leitura e execução):
-
-Supondo que você é da Turma 4 e Projeto 5, substitua:
-
-T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf
-por
-T4_G5_V01_Web_application_document.pdf
-
-Faça o mesmo para a documentação em formato DOCX.
-```
-
 |--> documentos<br>
   &emsp;| --> outros <br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf<br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.docx<br>
+  &emsp;| T8_G4_V3.0_Web_application_document.pdf <br>
+  &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
 |--> src<br>
   &emsp;|--> Backend<br>
-  &emsp;|--> Frontend<br>
+  &emsp;|--> Public (Frontend)<br>
 | readme.md<br>
 | license.txt
 
