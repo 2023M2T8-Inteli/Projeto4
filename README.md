@@ -82,18 +82,22 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-* 0.2.1 - 25/01/2022
-    * Atualização de documentos (código do módulo permanece inalterado).
-* 0.2.0 - 15/01/2022
-    * Remove `setDefaultXYZ()`
-    * Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * Crash quando chama `baz()`
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 3.0 - 26/05/2023
+    * Criação da página Home.html, analise.html, info.html, login.html, paghome.html 
+    * Criação do arquivo visual.css
+    * Atualização do banco de dados
+    * Criação do fetch no arquivo analise.js para integração do frontend com o backend
+* 2.0 - 11/05/2023
+    * Criação dos endpoints de chamadas no banco de dados
+    * Criação da arquitetura do Sistema
+    * Fluxograma da aplicação WEB
+    * Criação do proótipo
+* 1.0 - 24/04/2023
+    * Atualização dos itens 1 (Visão geral do projeto)
+    * 2(Análise do problema)
+    * 3 (Requisitos do sistema).
+
+
 
 ## 📋 Licença/License
 
