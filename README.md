@@ -24,26 +24,14 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
 
 ## 📁 Estrutura de pastas
 
-```
-Alunos inteli (remover essa observação do readme.md após leitura e execução):
-
-Supondo que você é da Turma 4 e Projeto 5, substitua:
-
-T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf
-por
-T4_G5_V01_Web_application_document.pdf
-
-Faça o mesmo para a documentação em formato DOCX.
-```
-
 |--> documentos<br>
   &emsp;| --> outros <br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf<br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.docx<br>
+  &emsp;| T8_G4_V3.0_Web_application_document.pdf <br>
+  &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
-|--> src<br>
-  &emsp;|--> Backend<br>
-  &emsp;|--> Frontend<br>
+|--> Banco_de_dados<br>
+|--> Public (Frontend)<br>
+|--> app.js<br>
 | readme.md<br>
 | license.txt
 
@@ -94,18 +82,22 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-* 0.2.1 - 25/01/2022
-    * Atualização de documentos (código do módulo permanece inalterado).
-* 0.2.0 - 15/01/2022
-    * Remove `setDefaultXYZ()`
-    * Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * Crash quando chama `baz()`
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 3.0 - 26/05/2023
+    * Criação da página Home.html, analise.html, info.html, login.html, paghome.html 
+    * Criação do arquivo visual.css
+    * Atualização do banco de dados
+    * Criação do fetch no arquivo analise.js para integração do frontend com o backend
+* 2.0 - 11/05/2023
+    * Criação dos endpoints de chamadas no banco de dados
+    * Criação da arquitetura do Sistema
+    * Fluxograma da aplicação WEB
+    * Criação do proótipo
+* 1.0 - 24/04/2023
+    * Atualização dos itens 1 (Visão geral do projeto)
+    * 2(Análise do problema)
+    * 3 (Requisitos do sistema).
+
+
 
 ## 📋 Licença/License
 
