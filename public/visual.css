@@ -172,9 +172,15 @@ th {
     text-align: justify;
 }   
 
-/* ÁREA DE TESTE */
 .rodape{
     position: relative;
     left: 100px;
     top: -13px;
 }
+
+.footer {
+    padding: 25px;
+
+}
+
+/* ÁREA DE TESTE */
