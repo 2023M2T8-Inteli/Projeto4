@@ -143,13 +143,12 @@ th {
     gap: 1%;
 }
 
-/* ÁREA DE TESTE */
-
 .paragrafo h1 {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
+    padding: 1px;
     position: absolute;
     top: 0px;
+    margin-left: 2.7%;
 }
 
 .paragrafo {
@@ -162,7 +161,8 @@ th {
 .paragrafo img {
     margin-right: 10px;
     position: relative;
-    top: -10px;
+    top: -25px;
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -171,3 +171,5 @@ th {
     padding: 3% ;
     text-align: justify;
 }   
+
+/* ÁREA DE TESTE */
