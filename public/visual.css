@@ -173,3 +173,8 @@ th {
 }   
 
 /* ÁREA DE TESTE */
+.rodape{
+    position: relative;
+    left: 100px;
+    top: -13px;
+}
