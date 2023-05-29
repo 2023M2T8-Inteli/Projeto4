@@ -170,7 +170,10 @@ app.put('/atualizaPico', (req, res) => {
     });
 });
 
-
+app.get('/relatorio', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.sendFile(__dirname + '/public/relatorio.html');
+});
 
 app.listen(port, hostname, () => {
     console.log('Servidor rodando em http://' + hostname + ':' + port);
