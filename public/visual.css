@@ -96,7 +96,6 @@ body {
 }
 
 
-
 #tabela {
     font-size: 20px;
     position: absolute;
@@ -153,17 +152,22 @@ th {
     margin-left: 2.7%;
 }
 
+.rodape {
+    margin-left: 20%;
+    margin-top: -6%;
+}
 .paragrafo {
-    position: absolute;
-    top: 100px;
+    position: relative;
+    top: 30px;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .paragrafo img {
     margin-right: 10px;
     position: relative;
-    top: -25px;
+    margin-top: -2%;
     box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
