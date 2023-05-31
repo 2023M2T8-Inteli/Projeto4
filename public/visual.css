@@ -7,9 +7,9 @@
 body {
     background: rgb(226, 226, 226);
     font-family: Arial;
-    /* Foi comentado porque estava bloqueando o scroll da página */
-    /* overflow-x: hidden;
-    overflow-y: hidden; */
+    height: auto;
+    width: auto;
+    min-height: calc(100% - (10vh));
 
 }
 
@@ -177,10 +177,11 @@ th {
     text-align: justify;
 }
 
-footer {
+.footer {
     background-color:  rgb(60, 60, 60);
-    height: 70px;
-
+    height: 10vh;
+    width: 100%;
+    max-width: 100%;
 }
 
 .footer p {
