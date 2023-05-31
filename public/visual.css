@@ -7,7 +7,6 @@
 body {
     background: rgb(226, 226, 226);
     font-family: Arial;
-
     /* Foi comentado porque estava bloqueando o scroll da página */
     /* overflow-x: hidden;
     overflow-y: hidden; */
@@ -15,11 +14,11 @@ body {
 }
 
 #logo {
-    width: 110px;
-    height: 110px;
+    width: 9%;
+    height: 17%;
     position: absolute;
-    left: 10px;
-    top: -20px;
+    left: 1vw;
+    top: -3vh;
 }
 
 #navbar ul {
