@@ -172,14 +172,26 @@ th {
     text-align: justify;
 }   
 
-.rodape{
-    position: relative;
-    left: 100px;
-    top: -13px;
+
+footer {
+    background-color:  rgb(60, 60, 60);
+    height: 70px;
 }
 
-.footer {
-    padding: 25px;
+.footer p {
+    color: white;
+    margin-left: 10px;
+    position: relative;
+    top: 23px;
+}
+
+
+.footer a img {
+    position: relative;
+    width: 65px;
+    margin-left: 1000px;
+    margin-top: -37px ;
+    justify-content: space-between;
 
 }
 
