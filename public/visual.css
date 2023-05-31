@@ -184,3 +184,6 @@ th {
 }
 
 /* ÁREA DE TESTE */
+#carouselconfig p{
+    background-color: rgba(31, 31, 31, 0.5);
+}
