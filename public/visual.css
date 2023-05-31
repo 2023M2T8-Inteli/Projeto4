@@ -189,12 +189,12 @@ footer {
 
 
 .footer a img {
-    position: relative;
     width: 65px;
-    margin-left: 1000px;
-    margin-top: -37px ;
-    justify-content: space-between;
 
 }
-
+.icones{
+    display: flex;
+    position: relative;
+    left: 500px;
+}
 /* ÁREA DE TESTE */
