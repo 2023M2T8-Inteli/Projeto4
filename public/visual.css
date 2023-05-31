@@ -182,19 +182,23 @@ footer {
 
 .footer p {
     color: white;
-    margin-left: 10px;
+    margin-left: 20px;
     position: relative;
     top: 23px;
 }
 
 
 .footer a img {
-    width: 55px;
+    width: 25px;
+    margin-left: 15px;
 
 }
 .icones{
     display: flex;
     position: absolute;
+    left: 1050px;
+    margin-top: -18px;
+
 
 }
 /* ÁREA DE TESTE */
