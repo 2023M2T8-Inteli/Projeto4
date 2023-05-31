@@ -1,6 +1,6 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -10,7 +10,7 @@ body {
 
     /* Foi comentado porque estava bloqueando o scroll da página */
     /* overflow-x: hidden;
-    overflow-y: hidden; */     
+    overflow-y: hidden; */
 
 }
 
@@ -52,11 +52,11 @@ body {
 }
 
 #menu_viagem {
-    width: 8%;
+    width: 9.5%;
 }
 
 #menu_vagao {
-    width: 8%;
+    width: 9.5%;
 }
 
 #graficos {
@@ -98,25 +98,25 @@ body {
 
 
 #tabela {
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
     left: 28%;
-    top: 25%;
-    background-color: azure;
+    top: 27.55%;
+    background-color: rgb(248, 248, 248);
     text-align: center;
-    border: #03658C 3px solid;
+    border: #040404 1px solid;
     margin-left: 20%;
     width: 40%;
 }
 
 td {
-    padding: 20px;
+    padding-left: 40px;
 }
 
 th {
-    font-size: 12.2px;
+    font-size: 13px;
     text-align: center;
-    padding-left: 70px;
+    padding-left: 15px;
 }
 
 .graficos {
@@ -127,12 +127,14 @@ th {
     margin-left: 8%;
 }
 
-#grafico_selecionado1{
-    margin-top: -3%;
+#grafico_selecionado1 {
+    margin-top: -5%;
+    width: 22%;
 }
 
-#grafico_selecionado2{
-    margin-top: -10%;
+#grafico_selecionado2 {
+    margin-top: -13%;
+    width: 22%;
 }
 
 #dropdown {
@@ -168,14 +170,14 @@ th {
 
 .paragrafo p {
     margin-top: 30px;
-    padding: 3% ;
+    padding: 3%;
     text-align: justify;
-}   
-
+}
 
 footer {
     background-color:  rgb(60, 60, 60);
     height: 70px;
+
 }
 
 .footer p {
