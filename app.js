@@ -3,7 +3,7 @@ const app = express()
 const hostname = '127.0.0.1';
 const port = 3000;
 const sqlite3 = require('sqlite3').verbose();
-const DBPATH = 'Banco_de_dados/bancodedados.db';
+const DBPATH = 'Banco_de_dados/dbProjeto.db';
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
