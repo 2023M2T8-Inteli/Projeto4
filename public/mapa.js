@@ -25,11 +25,27 @@ let Dados = data;
 let saida = '';
 let n_choque = '';
 let viagem = '';
+let lat = '';
+let lon = '';
 Dados.map(function(Dados) {
     viagem = `${Dados.id_viagem}`;
     n_choque += `${Dados.id_choque1}`;
+    // lat = `${Dados.latitude}`;
+    // lon = `${Dados.longitude}`;
     saida += `${Dados.act}`;
 });
+
+console.log(Dados[0]["latitude"],Dados[0]["latitude"])
+for(var i = 0; i < Dados.length; i++){
+    console.log([Dados[i]["latitude"], Dados[i]["longitude"]])
+    L.marker([Dados[i]["latitude"], Dados[i]["longitude"]]).addTo(map).bindPopup(`<b>Lat: ${Dados[i]["latitude"]} lon: ${Dados[i]["longitude"]} </b>`);
+}
+
+
+
+
+
+
 // Manda os dados colhidos do banco a div que está dentro do modal
 document.getElementById('dbresult').innerHTML = `<strong>Ponto</strong> <br> Número da viagem: ${viagem} <br> Número do choque: ${n_choque} <br> ACT: ${saida} <br>`;
 teste.bindPopup(`<strong>Ponto</strong> <br> Número da viagem: ${viagem} <br> Número do choque: ${n_choque} <br> ACT: ${saida} <br>`);
