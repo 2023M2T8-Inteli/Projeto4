@@ -58,6 +58,18 @@ app.get('/choque1', (req, res) => {
   });
 });
 
+app.get('/choque1All', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    //res.sendFile(__dirname+'/src/Frontend/choques.html');
+    var sql = `SELECT * FROM Choque1 WHERE id_choque1 = 1`;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+  });
+
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
