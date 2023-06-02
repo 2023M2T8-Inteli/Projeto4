@@ -80,11 +80,32 @@ fetch(url)
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    function date_converter(date_number) {
+        // Converte o número serial do Excel em milissegundos
+        const excelEpoch = new Date("1900-01-01").getTime(); // Excel epoch in milisegundos
+        const milliseconds = (date_number - 1) * 24 * 60 * 60 * 1000; // Converter nossa data para milisegundos
+    
+        // Cria uma nova data somando os milisegundos convertidos
+        const date = new Date(excelEpoch + milliseconds);
+    
+        const formattedDateString = date.toLocaleDateString(); // Formar a data com os dias, meses e anos
+        const formattedTimeString = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }); // Formar a hora da data
+        
+        // Juntar a data e a hora em uma string
+        var date_formated = formattedDateString + " " + formattedTimeString;
+
+        return date_formated;
+    }
+
     const markers = [];
     
    // Criar os markers no mapa baseados nos pontos do banco de dados 
     for (let i = 0; i < Dados.length; i++) {
         let marker = L.marker([Dados[i]["latitude"], Dados[i]["longitude"]]).addTo(map);
+
+        const date_serial_number = Dados[i]["data_hora"];
+
+        const final_date = date_converter(date_serial_number); 
 
         // Função para abrir o modal e exibir os valores do ponto
         function openModal() {
@@ -95,7 +116,7 @@ fetch(url)
                 Número do choque: ${Dados[i]["id_choque1"]} <hr>
 
                 Tipo vagão: ${Dados[i]["tipo_vagao"]}<br>
-                Data e hora: ${Dados[i]["data_hora"]}<br>
+                Data e hora: ${final_date}<br>
                 Velocidade: ${Dados[i]["velocidade"]}<br>
                 Posição: ${Dados[i]["posicao"]}<br>
                 Placa virtual: ${Dados[i]["placa_virtual"]}<br>
@@ -110,6 +131,7 @@ fetch(url)
         marker.on('click', openModal);
 
         markers.push(marker);
+        
     }
 })
 .catch(function(error) {
