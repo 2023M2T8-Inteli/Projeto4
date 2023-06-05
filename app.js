@@ -82,7 +82,7 @@ app.get('/choque2', (req, res) => {
 app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var id_pico = req.query.id;
-    var sql = `SELECT * FROM Pico WHERE id_pico=${id_pico}`;
+    var sql = `SELECT * FROM Pico`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
