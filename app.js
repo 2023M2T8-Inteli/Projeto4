@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.get('/analise', (req, res) => {
     //console.log('/Frontend');
-    res.sendFile(__dirname + '/public/analise.html'); 
+    res.sendFile(__dirname + '/public/analise.html');
 }); //envia o arquivo "análise.html" quando se realiza a requisição /analise, demonstrando-o e o lendo.
 
 app.get('/info_medias', (req, res) => {
@@ -40,14 +40,13 @@ app.get('/info_medias', (req, res) => {
 app.get('/info_M_Vagoes', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var sql = `SELECT * FROM Resumo_vagoes WHERE tipo_dados="completo"`
-    db.all(sql, [], (err, rows) =>{
-        if (err){
+    db.all(sql, [], (err, rows) => {
+        if (err) {
             throw err;
         }
         vetor = rows
         res.send(vetor)
     })
-    console.log(vetor)
 })
 
 
@@ -63,15 +62,15 @@ app.get('/info', (req, res) => {
 }); //seleciona todos os dados da tabela viagem
 
 app.get('/choque1', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  var id_choque1 = req.query.id;
-  var sql = `SELECT * FROM Choque1 WHERE id_choque1=${id_choque1}`;
-  db.all(sql, [], (err, rows) => {
-      if (err) {
-          throw err;
-      }
-      res.send(rows);
-  });
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var id_choque1 = req.query.id;
+    var sql = `SELECT * FROM Choque1 WHERE id_choque1=${id_choque1}`;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
 }); //seleciona todos os dados da tabela choque 1 nos quais o id_choque1 tem valor igual a um selecionado anteriormente.
 
 app.get('/choque1All', (req, res) => {
@@ -83,7 +82,7 @@ app.get('/choque1All', (req, res) => {
         }
         res.send(rows);
     });
-  }); //seleciona todos os dados da tabela choque1.
+}); //seleciona todos os dados da tabela choque1.
 
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

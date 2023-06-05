@@ -15,17 +15,13 @@ fetch(url)
     document.getElementById('tabela').innerHTML = saida;
     const table = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg  |  </td><td>Media Valores </td>"
+    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
     document.getElementById('tabela').appendChild(th); // Alteração aqui
 
     for (let line of Dados) {
       const tr = document.createElement('tr');
       let td = document.createElement('td');
       td.innerHTML = line.max_forca;
-      tr.appendChild(td);
-
-      td = document.createElement('td');
-      td.innerHTML = line.min_forca;
       tr.appendChild(td);
 
       td = document.createElement('td');
@@ -45,7 +41,7 @@ fetch(url)
       tr.appendChild(td);
 
       td = document.createElement('td');
-      td.innerHTML = line.media_valores;
+      td.innerHTML = line.min_peg;
       tr.appendChild(td);
 
       table.appendChild(tr);
@@ -70,21 +66,17 @@ fetch('http://127.0.0.1:3000/info_M_Vagoes')
     document.getElementById('tabela2').innerHTML = saida2;
     const table2 = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg  |  </td><td>Media Valores </td>"
+    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
     document.getElementById('tabela2').appendChild(th);
 
     for (let line of Dados) {
       const tr2 = document.createElement('tr');
       let td = document.createElement('td');
-      td.innerHTML = line.max_forca;
+      td.innerHTML = line.max_engante;
       tr2.appendChild(td);
 
       td = document.createElement('td');
-      td.innerHTML = line.min_forca;
-      tr2.appendChild(td);
-
-      td = document.createElement('td');
-      td.innerHTML = line.min_forca;
+      td.innerHTML = line.min_engante;
       tr2.appendChild(td);
 
       td = document.createElement('td');
@@ -100,7 +92,7 @@ fetch('http://127.0.0.1:3000/info_M_Vagoes')
       tr2.appendChild(td);
 
       td = document.createElement('td');
-      td.innerHTML = line.media_valores;
+      td.innerHTML = line.min_peg;
       tr2.appendChild(td);
 
       table2.appendChild(tr2);
