@@ -45,6 +45,7 @@ app.get('/info_M_Vagoes', (req, res) => {
             throw err;
         }
         vetor = rows
+        res.send(vetor)
     })
     console.log(vetor)
 })
