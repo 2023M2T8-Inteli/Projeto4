@@ -35,7 +35,6 @@ app.get('/info_medias', (req, res) => {
 
 app.get('/info', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    // res.sendFile(__dirname + '/src/Frontend/analise.html');
     var sql = `SELECT * FROM Viagem`;
     db.all(sql, [], (err, rows) => {
         if (err) {
@@ -47,7 +46,6 @@ app.get('/info', (req, res) => {
 
 app.get('/choque1', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  //res.sendFile(__dirname+'/src/Frontend/choques.html');
   var id_choque1 = req.query.id;
   var sql = `SELECT * FROM Choque1 WHERE id_choque1=${id_choque1}`;
   db.all(sql, [], (err, rows) => {
@@ -60,7 +58,6 @@ app.get('/choque1', (req, res) => {
 
 app.get('/choque1All', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.sendFile(__dirname+'/src/Frontend/choques.html');
     var sql = `SELECT * FROM Choque1`;
     db.all(sql, [], (err, rows) => {
         if (err) {
@@ -72,7 +69,6 @@ app.get('/choque1All', (req, res) => {
 
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.sendFile(__dirname+'/src/Frontend/choques.html');
     var id_choque2 = req.query.id;
     var sql = `SELECT * FROM Choque2`;
     db.all(sql, [], (err, rows) => {
@@ -85,7 +81,6 @@ app.get('/choque2', (req, res) => {
 
 app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.sendFile(__dirname+'/src/Frontend/choques.html');
     var id_pico = req.query.id;
     var sql = `SELECT * FROM Pico WHERE id_pico=${id_pico}`;
     db.all(sql, [], (err, rows) => {
@@ -98,7 +93,6 @@ app.get('/pico', (req, res) => {
 
 app.get('/viagens', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.sendFile(__dirname+'/src/Frontend/choques.html');
     var id_viagem = req.query.id;
     var sql = `SELECT * FROM Viagem WHERE id_viagem=${id_viagem}`;
     db.all(sql, [], (err, rows) => {
