@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
 app.use(express.static('public'));
+var vetor = []
 
 //variáveis e constantes necessárias para o pleno funcionamento do projeto, além
 //de outras definições.
@@ -35,6 +36,18 @@ app.get('/info_medias', (req, res) => {
         res.send(rows);
     });
 }); //demonstra as arrays contendo os valores medios das viagens quando requisitado.
+
+app.get('/info_M_Vagoes', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var sql = `SELECT * FROM Resumo_vagoes WHERE tipo_dados="completo"`
+    db.all(sql, [], (err, rows) =>{
+        if (err){
+            throw err;
+        }
+        vetor = rows
+    })
+    console.log(vetor)
+})
 
 
 app.get('/info', (req, res) => {
