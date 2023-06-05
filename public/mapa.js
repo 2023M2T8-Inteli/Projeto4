@@ -116,7 +116,6 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
             return response.json();
         })
         .then((data) => {
-            
             var Dados = data;
 
             // // Criar o mapa com o centro nos valores da latitudes e longitudes da row do meio dos dados
