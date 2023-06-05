@@ -115,8 +115,10 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
             var Dados = data;
 
             // // Criar o mapa com o centro nos valores da latitudes e longitudes da row do meio dos dados
-            // var mediana = Math.round(Dados.length / 2);
-            // map = L.map('map').setView([Dados[mediana]["latitude"], Dados[mediana]["longitude"]], 7);
+            var mediana = Math.round(Dados.length / 2);
+
+            map.flyTo([Dados[mediana]["latitude"], Dados[mediana]["longitude"]], 7);
+
 
             // // Inciar o mapa com o API do Leaflet
             // const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -134,6 +136,7 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
 
                 // Função para abrir o modal e exibir os valores do ponto
                 function openModal() {
+                    console.log($('#exampleModal').modal('show'))
                     $('#exampleModal').modal('show');
                     document.getElementById('dbresult').innerHTML = `
                         <strong>Ponto</strong><br>
@@ -161,8 +164,10 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
                 // Adcionar as latitudes e longitudes no array
                 latAndlng.push([Dados[i]["latitude"], Dados[i]["longitude"]]);
 
+                // Adcionar as linhas no mapa
                 var polyline = L.polyline(latAndlng, {color: 'red'}).addTo(map);  
 
+                // Adcionar as linhas no array
                 polylines.push(polyline);
             }
             
@@ -188,6 +193,14 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
 
 // CHOQUE 2
 
+// Define a custom icon with a different color
+var customIcon = L.icon({
+    iconUrl: 'images/marker-icon-yellow.png',  // URL to the custom icon image
+    iconSize: [25, 41],  // size of the icon image
+    iconAnchor: [12, 41],  // position of the icon anchor
+  });
+  
+
 const markers1 = []; // Array para guardar os pontos do mapa
 const latAndlng1 = []; // Array para guardar as latitudes e longitudes dos pontos
 const polylines1 = []; // Array para guardar as linhas do mapa
@@ -201,6 +214,7 @@ $(document).on('change', '.form-check-input', function() {
         $("#choque2").val("/choque2");
         choque2_url = $("#choque2").val();
         
+        
         const url = `${choque2_url}`;
         fetch(url)
         .then((response) => {
@@ -210,9 +224,13 @@ $(document).on('change', '.form-check-input', function() {
  
             let Dados1 = data;
 
+            var mediana = Math.round(Dados1.length / 2);
+
+            map.flyTo([Dados1[mediana]["latitude"], Dados1[mediana]["longitude"]], 7);
+
             // Criar os markers no mapa baseados nos pontos do banco de dados 
              for (let i = 0; i < Dados1.length; i++) {
-                 let marker1 = L.marker([Dados1[i]["latitude"], Dados1[i]["longitude"]]).addTo(map);
+                 let marker1 = L.marker([Dados1[i]["latitude"], Dados1[i]["longitude"]], { icon: customIcon }).addTo(map);
          
                  const date_serial_number = Dados1[i]["data_hora"];
          
@@ -220,8 +238,10 @@ $(document).on('change', '.form-check-input', function() {
          
                  // Função para abrir o modal e exibir os valores do ponto
                  function openModal() {
-                     $('#exampleModal').modal('show');
-                     document.getElementById('dbresult').innerHTML = `
+                    console.log("modal daora");
+                    console.log($('#exampleModal-choque2').modal('show'));
+                     $('#xampleModal_choque2').modal('show');
+                     document.getElementById('dbresult_choque2').innerHTML = `
                          <strong>Ponto</strong><br>
                          Número da viagem: ${Dados1[i]["id_viagem"]}<br>
                          Número do choque 2: ${Dados1[i]["id_choque2"]} <hr>
@@ -247,8 +267,10 @@ $(document).on('change', '.form-check-input', function() {
                  // Adcionar as latitudes e longitudes no array
                  latAndlng1.push([Dados1[i]["latitude"], Dados1[i]["longitude"]]);
 
+                 // Adcionar as linhas no mapa
                  var polyline = L.polyline(latAndlng1, {color: 'green'}).addTo(map); 
                  
+                 // Adcionar as linhas no array
                  polylines1.push(polyline);
              }
          
