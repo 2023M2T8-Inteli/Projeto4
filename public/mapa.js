@@ -294,3 +294,101 @@ $(document).on('change', '.form-check-input', function() {
     }
 
 });
+
+// PICOS
+
+
+const markers_pico = []; // Array para guardar os pontos do mapa
+const latAndlng_pico = []; // Array para guardar as latitudes e longitudes dos pontos
+const polylines_pico = []; // Array para guardar as linhas do mapa
+
+// Detectar alguma mudança nos checkboxes
+$(document).on('change', '.form-check-input', function() { 
+
+    // Se o checkbox do pico estiver marcado, então o fetch para requição dos dados é chamado
+    if ( $('#pico').is(':checked') == true ) {
+
+        $("#pico").val("/pico");
+        pico_url = $("#pico").val();
+        
+        
+        const url = `${pico_url}`;
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+ 
+            let Dados_pico = data;
+
+            var mediana = Math.round(Dados_pico.length / 2);
+
+            map.flyTo([Dados_pico[mediana]["latitude"], Dados_pico[mediana]["longitude"]], 7);
+
+            // Criar os markers no mapa baseados nos pontos do banco de dados 
+             for (let i = 0; i < Dados_pico.length; i++) {
+                 let marker_pico = L.marker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]]).addTo(map);
+         
+                 const date_serial_number = Dados_pico[i]["data_hora"];
+         
+                 const final_date = date_converter(date_serial_number); 
+         
+                 // Função para abrir o modal e exibir os valores do ponto
+                 function openModal() {
+                    console.log("modal daora");
+                    console.log($('#exampleModal-pico').modal('show'));
+                     $('#exampleModal-pico').modal('show');
+                     document.getElementById('dbresult-pico').innerHTML = `
+                         <strong>Ponto</strong><br>
+                         Número da viagem: ${Dados_pico[i]["id_viagem"]}<br>
+                         Número do Pico: ${Dados_pico[i]["id_pico"]} <hr>
+         
+                         Tipo vagão: ${Dados_pico[i]["tipo_vagao"]}<br>
+                         Data e hora: ${final_date}<br>
+                         Velocidade: ${Dados_pico[i]["velocidade"]}<br>
+                         Posição: ${Dados_pico[i]["posicao"]}<br>
+                         Placa virtual: ${Dados_pico[i]["placa_virtual"]}<br>
+                         Trecho: ${Dados_pico[i]["trecho"]}<br>
+                         Engate: ${Dados_pico[i]["engate"]}<br>
+                         Delta: ${Dados_pico[i]["delta"]}<br>
+                         ACT: ${Dados_pico[i]["act"]}<br>
+                         Peg: ${Dados_pico[i]["peg"]}<br>
+                     `;
+                 }
+         
+                 // Chama a função ao clicar no marker no mapa
+                 marker_pico.on('click', openModal);
+         
+                 // Adcionar os markers no array 
+                 markers_pico.push(marker_pico);
+         
+                 // Adcionar as latitudes e longitudes no array
+                 latAndlng_pico.push([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]]);
+
+                 // Adcionar as linhas no mapa
+                 var polyline_pico = L.polyline(latAndlng_pico, {color: 'purple'}).addTo(map); 
+                 
+                 // Adcionar as linhas no array
+                 polylines_pico.push(polyline_pico);
+             }
+         
+             
+         })
+         .catch(function(error) {
+             console.log(error);
+         });
+
+    } else { // Se o checkbox do choque 2 não estiver marcado, então os markers são removidos do mapa (se não forem removidos, os pontos começam a se sobrepor)
+
+        // Remover os markers do mapa
+        for (var j = 0; j < markers_pico.length; j++) {
+            map.removeLayer(markers_pico[j]);
+        }
+
+        // Remover as linhas do mapa
+        for(var k = 0; k < polylines_pico.length; k++) {
+            map.removeLayer(polylines_pico[k]);
+        }
+    }
+
+});
