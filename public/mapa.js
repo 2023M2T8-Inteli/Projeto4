@@ -63,6 +63,7 @@
 // Variáveis para guardar os valores dos checkboxes
 var choque1_url = $("#choque1").val();
 var choque2_url = $("#choque2").val();
+var pico_url = $("#pico").val();
 
 // Função para a coversão de datas no formato Epoch em datas no formato comum
 function date_converter(date_number) {
@@ -90,6 +91,10 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+
+var myRenderer = L.canvas({ padding: 0.5 });
+
 
 const markers = []; // Array para guardar os pontos do mapa
 const latAndlng = []; // Array para guardar as latitudes e longitudes dos pontos
@@ -326,8 +331,16 @@ $(document).on('change', '.form-check-input', function() {
             map.flyTo([Dados_pico[mediana]["latitude"], Dados_pico[mediana]["longitude"]], 7);
 
             // Criar os markers no mapa baseados nos pontos do banco de dados 
+            // for (let i = 0; i < Dados_pico.length; i++)
              for (let i = 0; i < Dados_pico.length; i++) {
                  let marker_pico = L.marker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]]).addTo(map);
+
+                // Codigo para criar os circulos com o canvas
+                //  var circleMarker = L.circleMarker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]], {
+                //     renderer: myRenderer,
+                //     color: '#3388ff'
+                // }).addTo(map);
+     
          
                  const date_serial_number = Dados_pico[i]["data_hora"];
          

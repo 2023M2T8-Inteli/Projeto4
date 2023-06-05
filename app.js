@@ -87,7 +87,7 @@ app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     //res.sendFile(__dirname+'/src/Frontend/choques.html');
     var id_pico = req.query.id;
-    var sql = `SELECT * FROM Pico`;
+    var sql = `SELECT * FROM Pico WHERE id_pico <= 125`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
