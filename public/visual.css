@@ -106,6 +106,7 @@ body {
 
 
 #tabela {
+    display: flex;
     font-size: 20px;
     position: absolute;
     left: 28%;
