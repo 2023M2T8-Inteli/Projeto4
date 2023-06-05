@@ -1,11 +1,11 @@
 
-console.log("Executando")
+console.log("Executando") //Escreve no console a palavra "Executando"
 
-const url = '/info_medias';
+const url = '/info_medias'; //define a constante url como /info_médias (comentada no arquivo "app.js")
 fetch(url)
 .then((response) => {
   return response.json();
-})
+}) //retorna o valor da resposta como json
 .then((data) => {
   var Dados = data;
   let saida = '';
@@ -17,9 +17,9 @@ fetch(url)
   //var tr = document.createElement('tr');
   var th  = document.createElement('th')
   th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg  |  </td><td>Media Valores </td>"
-  tabela.appendChild(th);
+  tabela.appendChild(th); //cria o esquema da tabela no documento, com as nominações dos dados
 
-  for(let line of Dados){
+  for(let line of Dados){ //acrescenta uma linha na tabela para cada um dos dados preteridos
   const tr = document.createElement('tr');
   let td = document.createElement('td');
   td.innerHTML = line.max_forca;
@@ -47,13 +47,13 @@ fetch(url)
 
   td = document.createElement('td');
   td.innerHTML = line.media_valores;
-  tr.appendChild(td);
+  tr.appendChild(td); 
   
   table.appendChild(tr);
   }
     const resultado = document.querySelector('#tabela');
     resultado.appendChild(table);
-  })
+  }) 
   .catch((error) => {
     console.log(error);
-  });
+  }); //apresenta o erro ocorrido no console
