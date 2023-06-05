@@ -6,7 +6,7 @@
 
 # Nome do projeto
 
-## Nome do grupo
+## Nome do grupo: InovTech
 
 ## Integrantes:
 - <a href="https://www.linkedin.com/in/eduarda-cardoso-de-souza-8bb802268/">Eduarda Cardoso de Souza</a> 
@@ -18,7 +18,7 @@
 
 ## 📝 Descrição
 
-Uma das áreas de autação do IPT na atualidade diz respeito ao monitoramento e avaliação estrutural com direcionamento ao segmento ferroviário, proporcionando as informações necessárias para as tomadas de decisão e minimizando os custos operacionais. Essas informações são apresentadas aos clientes no formato de volumosos relatórios, repletos de textos, gráficos, mapas e tabelas, disponibilizado de forma impressa aos usuários. A grande problemática, entretanto, está na grande quantidade de tempo gasta para análise e entendimento destes ensaios, dificultando, portanto, o processo de tomada de decisões.
+Uma das áreas de atuação do IPT na atualidade diz respeito ao monitoramento e avaliação estrutural com direcionamento ao segmento ferroviário, proporcionando as informações necessárias para as tomadas de decisão e minimizando os custos operacionais. Essas informações são apresentadas aos clientes no formato de volumosos relatórios, repletos de textos, gráficos, mapas e tabelas, disponibilizado de forma impressa aos usuários. A grande problemática, entretanto, está na grande quantidade de tempo gasta para análise e entendimento destes ensaios, dificultando, portanto, o processo de tomada de decisões.
 Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dados e informações obtidos pelos estudos realizados pelo laboratório LInE em uma aplicação WEB, melhorando a experiência dos clientes do IPT e facilitando a tomada de decisões por parte do usuário final. Desenvolvemos uma aplicação WEB que demonstra o trajeto realizado pelo trem e que aponta os pontos nos quais ocorreu uma mudança de estado anormal no veículo, seja em quesito de pressão, velocidade ou outros fatores que impactam (ou podem impactar) a segurança dos vagões durante o caminho.
 
 
@@ -31,6 +31,7 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
 |--> imagens<br>
 |--> Banco_de_dados<br>
 |--> Public (Frontend)<br>
+|--> scripts de suporte<br>
 |--> app.js<br>
 | readme.md<br>
 | license.txt
