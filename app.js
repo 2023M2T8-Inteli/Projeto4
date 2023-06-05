@@ -10,17 +10,21 @@ app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
 app.use(express.static('public'));
 
+//variáveis e constantes necessárias para o pleno funcionamento do projeto, além
+//de outras definições.
+
 // app.use('Backend/', express.static(__dirname + '/src/Backend'));
 
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/public/paghome.html');
-});
+}); //define o arquivo paghome como default quando se acessa o url do site, demonstrando-o.
 
 app.get('/analise', (req, res) => {
     //console.log('/Frontend');
-    res.sendFile(__dirname + '/public/analise.html');
-});
+    res.sendFile(__dirname + '/public/analise.html'); 
+}); //envia o arquivo "análise.html" quando se realiza a requisição /analise, demonstrando-o e o lendo.
+
 app.get('/info_medias', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var sql = `SELECT * FROM Viagem`;
@@ -30,7 +34,7 @@ app.get('/info_medias', (req, res) => {
         }
         res.send(rows);
     });
-});
+}); //demonstra as arrays contendo os valores medios das viagens quando requisitado.
 
 
 app.get('/info', (req, res) => {
@@ -42,7 +46,7 @@ app.get('/info', (req, res) => {
         }
         res.send(rows);
     });
-});
+}); //seleciona todos os dados da tabela viagem
 
 app.get('/choque1', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -54,7 +58,7 @@ app.get('/choque1', (req, res) => {
       }
       res.send(rows);
   });
-});
+}); //seleciona todos os dados da tabela choque 1 nos quais o id_choque1 tem valor igual a um selecionado anteriormente.
 
 app.get('/choque1All', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -65,7 +69,7 @@ app.get('/choque1All', (req, res) => {
         }
         res.send(rows);
     });
-  });
+  }); //seleciona todos os dados da tabela choque1.
 
 app.get('/choque2', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -77,7 +81,7 @@ app.get('/choque2', (req, res) => {
         }
         res.send(rows);
     });
-});
+}); //seleciona todos os dados da tabela choque 2.
 
 app.get('/pico', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -89,7 +93,7 @@ app.get('/pico', (req, res) => {
         }
         res.send(rows);
     });
-});
+}); //lê o banco de dados selecionando todos os arquivos da tabela Pico os quais tem id_pico tem valor igual a um selecionado anteriormente.
 
 app.get('/viagens', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -101,7 +105,7 @@ app.get('/viagens', (req, res) => {
         }
         res.send(rows);
     });
-});
+}); //seleciona todos os dados da tabela Viagem nos quais o id_viagem tem valor igual a um selecionado anteriormente. 
 
 app.post('/inserePico', (req, res) => {
     res.statusCode = 200;
@@ -129,7 +133,7 @@ app.post('/inserePico', (req, res) => {
             res.send("Pico cadastrado com sucesso");
         }
     });
-});
+}); //insere na tabela Pico valores como id_pico, id_viagem, tipo do vagão, etc.
 
 
 app.post("/deletPico", (req, res) => {
@@ -146,7 +150,7 @@ app.post("/deletPico", (req, res) => {
         console.log("Registro deletado com sucesso");
         console.log(rows)
     });
-});
+}); //deleta todos os valores que tenham deterinado id na tabela pico.
 
 app.put('/atualizaPico', (req, res) => {
     res.statusCode = 200;
@@ -174,13 +178,13 @@ app.put('/atualizaPico', (req, res) => {
             console.log(rows);
         }
     });
-});
+}); //atualiza os dados relativos a determinado id_pico na tabela Pico.
 
 app.get('/relatorio', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/public/relatorio.html');
-});
+}); //mostra o relatório da viagem.
 
 app.listen(port, hostname, () => {
     console.log('Servidor rodando em http://' + hostname + ':' + port);
-});
+}); //escreve no console o "link" de acesso para a aplicação.
