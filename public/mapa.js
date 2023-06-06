@@ -60,6 +60,16 @@
 //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 // }).addTo(map);
 
+// Variáveis para guardar os valores da seleção de viagem
+var viagem_n = $("#select-viagem").val();
+
+console.log(viagem_n);
+
+$(document).on('change', '#select-viagem', function() {
+    viagem_n = parseInt($("#select-viagem").val());
+    console.log(viagem_n);
+});
+
 // Variáveis para guardar os valores dos checkboxes
 var choque1_url = $("#choque1").val();
 var choque2_url = $("#choque2").val();
@@ -104,6 +114,10 @@ const polylines = []; // Array para guardar as linhas do mapa
 
 $(document).on('change', '.form-check-input', function() { // Detectar alguma mudançã nos checkboxes
 
+    if (viagem_n == "null") {
+        console.log("Selecione uma viagem")
+    }
+
     // Se o checkbox do choque 1 estiver marcado, então o fetch para requição dos dados é chamado
     if ( $('#choque1').is(':checked') == true ) {
 
@@ -116,7 +130,24 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
             return response.json();
         })
         .then((data) => {
-            var Dados = data;
+            // var Dados = data;
+
+            // Variavel para guardar os dados da viagem selecionada do SQL query do backend
+            var Dados = [];
+
+            // For para filtrar apenas os dados da viagem selecionada
+            for (var i = 0; i < data.length; i++) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                    Dados.push(data[i]);
+                }
+            }
+
+            // Verificar se há dados para a viagem selecionada
+            if (Dados.length == 0 && viagem_n == "null"){
+                alert("Selecione uma viagem");
+            } else if (Dados.length == 0) {
+                alert("Não há dados para essa viagem");
+            }
 
             // // Criar o mapa com o centro nos valores da latitudes e longitudes da row do meio dos dados
             var mediana = Math.round(Dados.length / 2);
@@ -226,7 +257,26 @@ $(document).on('change', '.form-check-input', function() {
         })
         .then((data) => {
  
-            let Dados1 = data;
+            // let Dados1 = data;
+
+            // Variavel para guardar os dados da viagem selecionada do SQL query do backend
+            var Dados1 = [];
+
+            // For para filtrar apenas os dados da viagem selecionada
+            for (var i = 0; i < data.length; i++) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                    Dados1.push(data[i]);
+                }
+            }
+
+            // Verificar se há dados para a viagem selecionada
+            if (Dados1.length == 0 && viagem_n == "null"){
+                alert("Selecione uma viagem");
+            } else if (Dados1.length == 0) {
+                alert("Não há dados para essa viagem");
+            }
+
+            console.log(Dados1);
 
             var mediana = Math.round(Dados1.length / 2);
 
@@ -323,7 +373,26 @@ $(document).on('change', '.form-check-input', function() {
         })
         .then((data) => {
  
-            let Dados_pico = data;
+            // let Dados_pico = data;
+
+            // Variavel para guardar os dados da viagem selecionada do SQL query do backend
+            var Dados_pico = [];
+
+            // For para filtrar apenas os dados da viagem selecionada
+            for (var i = 0; i < data.length; i++) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                    Dados_pico.push(data[i]);
+                }
+            }
+            
+            // Verificar se há dados para a viagem selecionada
+            if (Dados_pico.length == 0 && viagem_n == "null"){
+                alert("Selecione uma viagem");
+            } else if (Dados_pico.length == 0) {
+                alert("Não há dados para essa viagem");
+            }
+
+            console.log(Dados_pico);
 
             var mediana = Math.round(Dados_pico.length / 2);
 
