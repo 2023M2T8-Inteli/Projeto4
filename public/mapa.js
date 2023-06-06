@@ -145,6 +145,11 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
             // Verificar se há dados para a viagem selecionada
             if (Dados.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
+
+                // Desmarcar os checkboxes
+                $('#choque1').prop( "checked", false );
+                $('#choque2').prop( "checked", false );
+                $('#pico').prop( "checked", false );
             } else if (Dados.length == 0) {
                 alert("Não há dados para essa viagem");
             }
@@ -272,6 +277,12 @@ $(document).on('change', '.form-check-input', function() {
             // Verificar se há dados para a viagem selecionada
             if (Dados1.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
+
+                // Desmarcar os checkboxes
+                $('#choque1').prop( "checked", false );
+                $('#choque2').prop( "checked", false );
+                $('#pico').prop( "checked", false );
+
             } else if (Dados1.length == 0) {
                 alert("Não há dados para essa viagem");
             }
@@ -388,6 +399,11 @@ $(document).on('change', '.form-check-input', function() {
             // Verificar se há dados para a viagem selecionada
             if (Dados_pico.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
+
+                // Desmarcar os checkboxes
+                $('#choque1').prop( "checked", false );
+                $('#choque2').prop( "checked", false );
+                $('#pico').prop( "checked", false );
             } else if (Dados_pico.length == 0) {
                 alert("Não há dados para essa viagem");
             }
