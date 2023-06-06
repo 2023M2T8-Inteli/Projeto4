@@ -367,6 +367,12 @@ const markers_pico = []; // Array para guardar os pontos do mapa
 const latAndlng_pico = []; // Array para guardar as latitudes e longitudes dos pontos
 const polylines_pico = []; // Array para guardar as linhas do mapa
 
+var customIcon_pico = L.icon({
+    iconUrl: 'images/marker-icon-orange.png',  // URL to the custom icon image
+    iconSize: [25, 41],  // size of the icon image
+    iconAnchor: [12, 41],  // position of the icon anchor
+  });
+
 // Detectar alguma mudança nos checkboxes
 $(document).on('change', '.form-check-input', function() { 
 
@@ -417,7 +423,7 @@ $(document).on('change', '.form-check-input', function() {
             // Criar os markers no mapa baseados nos pontos do banco de dados 
             // for (let i = 0; i < Dados_pico.length; i++)
              for (let i = 0; i < Dados_pico.length; i++) {
-                 let marker_pico = L.marker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]]).addTo(map);
+                 let marker_pico = L.marker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]], { icon: customIcon_pico }).addTo(map);
 
                 // Codigo para criar os circulos com o canvas
                 //  var circleMarker = L.circleMarker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]], {
