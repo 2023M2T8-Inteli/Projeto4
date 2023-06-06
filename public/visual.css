@@ -186,6 +186,7 @@ th {
 
     text-align: center;
     color: black;
+    text-align: justify;
 }
 
 .imagem-info {
@@ -212,6 +213,7 @@ th {
 
 .footer-info {
     color: white;
+    margin-top: 1%;
 }
 
 .icon {
