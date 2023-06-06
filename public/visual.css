@@ -137,7 +137,7 @@ th {
 
 
 #tabela2 {
-    font-size: 20px;
+    font-size: 12px;
     position: absolute;
     left: 28%;
     top: 70%;
@@ -153,7 +153,7 @@ td {
 }
 
 th {
-    font-size: 13px;
+    font-size: 15px;
     text-align: center;
     padding-left: 15px;
 }
