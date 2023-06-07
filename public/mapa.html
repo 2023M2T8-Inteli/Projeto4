@@ -18,7 +18,7 @@
 <body>
   <nav>
     <a href="paghome.html" class="link">
-        <img src="images/logoinovtech.png">
+        <img src="images/logoinovtech.png"> 
     </a>
     <div class="mobile-menu">
       <div class="line1"></div>
@@ -36,31 +36,53 @@
 
     
     <!-- Bootstrap select box para selecionar as  viagens-->
-     <select id="select-viagem" class="form-select" aria-label="Default select example">
-      <option value="null" selected>Escolha a viagem</option>
-      <option value="1">Viagem 1</option>
-      <option value="2">Viagem 2</option>
-      <option value="3">Viagem 3</option>
-    </select>
-    
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" value="" id="choque1">
-      <label class="form-check-label" for="choque1">
-        Choque 1
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" value="/choque2" id="choque2">
-      <label class="form-check-label" for="choque2">
-        Choque 2
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" value="/pico" id="pico">
-      <label class="form-check-label" for="pico">
-        Pico
-      </label>
-    </div>
+     <div class="map-controls">
+       <select id="select-viagem" class="form-select" aria-label="Default select example" style="width: 22.5vw;">
+        <option value="null" selected>Selecione a viagem</option>
+        <option value="1">Viagem 1</option>
+        <option value="2">Viagem 2</option>
+        <option value="3">Viagem 3</option>
+           </select>
+           
+           <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="choque1" >
+            <label class="form-check-label" for="choque1" data-toggle="tooltip" data-placement="bottom" 
+            title=" O Choque tipo 1 foi definido como:
+            - Janela de 440 ms que será movida em passos de 440 ms do início do sinal até o final do sinal;
+            - Em cada janela, caso a força no tempo final menos força no tempo inicial possua variação maior
+             ou igual a 30 tf será considerado choque;
+            - Em caso de choque, será adotado o tempo e localização do vagão no final da janela.
+            " style=" white-space: nowrap;">
+              Choque 1
+            </label>
+          </div>
+           <div class="form-check form-check-inline" >
+        <input class="form-check-input" type="checkbox" value="/choque2" id="choque2">
+        <label class="form-check-label" for="choque2" data-toggle="tooltip" data-placement="bottom"
+        title="O Choque tipo 2 foi definido como:
+        - Variação de força de pelo menos 30 tf, sendo que esta variação deve incluir o ciclo completo
+        partindo de um valor inicial, aumentando em módulo, pelo menos 30 tf e retornando ao valor
+        inicialmente anotado;
+        - A janela máxima a ser considerada é de 440 milissegundos;
+        - A cada choque encontrado uma nova janela é iniciada, portanto em 440 milissegundos podem
+        ocorrer mais de um choque.
+        " style=" white-space: nowrap;">
+          Choque 2
+        </label>
+           </div>
+           <div class="form-check form-check-inline" >
+        <input class="form-check-input" type="checkbox" value="/pico" id="pico">
+        <label class="form-check-label" for="pico" data-toggle="tooltip" data-placement="bottom"
+        title="O pico diz respeito aos esforços críticos que atendam ao critério:
+        - Para todo o esforço que ultrapassar 136 tf;
+        - Anotar o tempo que o esforço permanece acima de 136 tf;
+        - Indicar o maior esforço encontrado neste período e os demais parâmetros no
+        mesmo instante do maior esforço.
+        " style=" white-space: nowrap;">
+          Pico
+        </label>
+           </div>
+     </div>
   
   <div id="map" ></div>
 
