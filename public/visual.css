@@ -11,6 +11,7 @@ html, body {
 }
 .body_paghome{
   background-color: #055BA6;
+  overflow: hidden;
   
 }
 .background-color {
@@ -160,7 +161,7 @@ html, body {
   background-color: rgb(60, 60, 60);
   padding: 2vh;
   width: 100%;
-  height: 25vh;
+  height: 24vh;
 }
 
 .footer-conteudo {
@@ -348,24 +349,7 @@ th {
 
 
 /* ÁREA DE TESTE */
-.map-container {
-  position: relative;
-}
 
-#map {
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.map-controls {
-  position: absolute;
-  z-index: 1;
-  padding-left: calc(100% - 25vw);
-  padding-top: 1vh;
-
-
-}
 
 
 

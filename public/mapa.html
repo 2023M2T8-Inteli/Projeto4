@@ -13,26 +13,31 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" type="text/css" href="visual.css">
     <link href="mapa.css" rel="stylesheet" />
+
     <title>Mapa</title>
 </head>
 <body>
-  <nav>
-    <a href="paghome.html" class="link">
-        <img src="images/logoinovtech.png"> 
-    </a>
-    <div class="mobile-menu">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+  <header>
+    <div >
+      <nav>
+        <a href="paghome.html" class="link">
+            <img src="images/logoinovtech.png">
+        </a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href ="info.html">Sobre Nós</a></li>
+          <li><a href = "mapa.html">Mapa</a></li>
+          <li><a href ="analise.html">Análise Geral</a></li>
+          <li><a href ="relatorio.html">Relatório</a></li>
+        </ul>
+      </nav>
+        <script src="navbar.js"></script>
     </div>
-    <ul class="nav-list">
-      <li><a href ="info.html">Sobre Nós</a></li>
-      <li><a href = "mapa.html">Mapa</a></li>
-      <li><a href ="analise.html">Análise Geral</a></li>
-      <li><a href ="relatorio.html">Relatório</a></li>
-    </ul>
-  </nav>
-  <script src="navbar.js"></script>
+  </header>
 
     
     <!-- Bootstrap select box para selecionar as  viagens-->
@@ -125,12 +130,18 @@
     </div>
 
     <script src="mapa.js"></script>
-
     <footer class="footer">
       <div class="footer-conteudo">
         <div class="footer-info">
           <p> &copy; IPT - Instituto de Pesquisas Tecnológicas </p>
         </div>
+        <div class="footer-icones">
+          <a href="https://www.instagram.com/ipt_oficial/" target="_blank"><img src="images/instagram.png" class="icon" alt="Instagram IPT"></a>
+          <a href="https://www.linkedin.com/school/iptsp/" target="_blank"><img src="images/linkedin.png" class="icon" alt="Linkedin IPT"></a>
+          <a href="https://www.ipt.br/" target="_blank"><img src="images/siteipt.png" class="icon" alt="Site IPT"></a>
+          <!-- Adicione mais ícones e links aqui -->
+        </div>
+
       </div>
     </footer>
   </body>
