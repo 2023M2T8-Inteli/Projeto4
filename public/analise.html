@@ -17,128 +17,119 @@
 
   <body style="overflow-x: hidden;">
 
-    <header>
-      <nav>
-        <a href="paghome.html" class="link">
-            <img src="images/logoinovtech.png">
-        </a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+    <div class="content">
+      <header>
+        <nav>
+          <a href="paghome.html" class="link">
+              <img src="images/logoinovtech.png">
+          </a>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href ="info.html">Sobre Nós</a></li>
+            <li><a href = "mapa.html">Mapa</a></li>
+            <li><a href ="analise.html">Análise Geral</a></li>
+            <li><a href ="relatorio.html">Relatório</a></li>
+          </ul>
+        </nav>
+      </header>
+      <script src="navbar.js"></script>
+      <div>
+        <div id="dropdown">
+          <select id="menu_viagem" class="form-select" style="width:20%;">
+            <option value="nada"> Selecione a viagem </option>
+            <option value="Viagem1">Viagem 1</option>
+            <option value="Viagem2">Viagem 2</option>
+            <option value="Viagem3">Viagem 3</option>
+            <option value="Viagem4">Viagem 4</option>
+            <option value="Viagem5">Viagem 5</option>
+          </select>
+          <select id="menu_vagao" class="form-select" style="width:20%;">
+            <option value="nada"> Selecione o vagão </option>
+            <option value="VagaoE">Vagão E</option>
+            <option value="VagaoF">Vagão F</option>
+          </select>
         </div>
-        <ul class="nav-list">
-          <li><a href ="info.html">Sobre Nós</a></li>
-          <li><a href = "mapa.html">Mapa</a></li>
-          <li><a href ="analise.html">Análise Geral</a></li>
-          <li><a href ="relatorio.html">Relatório</a></li>
-        </ul>
-      </nav>
-    </header>
-    <script src="navbar.js"></script>
-
-    <div>
-
-      <div id="dropdown">
-        <select id="menu_viagem" class="form-select">
-          <option value="nada"> - - </option>
-          <option value="Viagem1">Viagem 1</option>
-          <option value="Viagem2">Viagem 2</option>
-          <option value="Viagem3">Viagem 3</option>
-          <option value="Viagem4">Viagem 4</option>
-          <option value="Viagem5">Viagem 5</option>
-        </select>
-
-        <select id="menu_vagao" class="form-select">
-          <option value="nada"> - - </option>
-          <option value="VagaoE">Vagão E</option>
-          <option value="VagaoF">Vagão F</option>
-        </select>
-      </div>
-
-      <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
-      <br>
-      <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
-
-      <script>
-        const vagao = document.getElementById('menu_vagao');
-        const viagem = document.getElementById('menu_viagem');
-        const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
-        const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
-
-
-        viagem.addEventListener('change', () => {
-          const viagemSelecionada = viagem.value;
-          changeViagem(viagemSelecionada);
-          document.getElementById('menu_vagao').value = "VagaoE"
-        });
-
-        function changeViagem(viagem) {
-          if (viagem === "Viagem1") {
-            graficoSelecionado1.src = "graficos/Markov - Viagem 1 - E - act.bmp";
-            graficoSelecionado2.src = "graficos/Markov - Viagem 1 - E - forca.bmp";
-
-          } else if (viagem === "Viagem2") {
-            graficoSelecionado1.src = "graficos/Markov -  Viagem 2 - E - act.bmp";
-            graficoSelecionado2.src = "graficos/Markov - Viagem 2 - E - forca.bmp";
-            // ...
-          } else if (viagem === "Viagem3") {
-            graficoSelecionado1.src = "graficos/Markov - Viagem 3 - E - act.bmp";
-            graficoSelecionado2.src = "graficos/Markov - Viagem 3 - E - forca.bmp";
-          } else if (viagem === "Viagem4") {
-            graficoSelecionado1.src = "graficos/Markov - Viagem 4 - E - act.bmp";
-            graficoSelecionado2.src = "graficos/Markov - Viagem 4 - E - forca.bmp";
-          } else if (viagem === "Viagem5") {
-            graficoSelecionado1.src = "graficos/Markov - Viagem 5 - E - act.bmp";
-            graficoSelecionado2.src = "graficos/Markov - Viagem 5 - E - forca.bmp";
-          }
-        }
-
-        viagem.addEventListener('change', () => {
-          const viagemSelecionada = viagem.value;
-          vagao.addEventListener('change', () => {
-            const vagaoSelecionado = vagao.value;
-
-            if (viagemSelecionada === "Viagem1" && vagaoSelecionado === "VagaoE") {
+        <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
+        <br>
+        <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
+        <script>
+          const vagao = document.getElementById('menu_vagao');
+          const viagem = document.getElementById('menu_viagem');
+          const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
+          const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
+          viagem.addEventListener('change', () => {
+            const viagemSelecionada = viagem.value;
+            changeViagem(viagemSelecionada);
+            document.getElementById('menu_vagao').value = "VagaoE"
+          });
+          function changeViagem(viagem) {
+            if (viagem === "Viagem1") {
               graficoSelecionado1.src = "graficos/Markov - Viagem 1 - E - act.bmp";
               graficoSelecionado2.src = "graficos/Markov - Viagem 1 - E - forca.bmp";
-            } else if (viagemSelecionada === "Viagem1" && vagaoSelecionado === "VagaoF") {
-              graficoSelecionado1.src = "graficos/Markov - Viagem 1 - F - act.bmp";
-              graficoSelecionado2.src = "graficos/Markov - Viagem 1- F - forca.bmp";
-            } else if (viagemSelecionada === "Viagem2" && vagaoSelecionado === "VagaoE") {
+            } else if (viagem === "Viagem2") {
               graficoSelecionado1.src = "graficos/Markov -  Viagem 2 - E - act.bmp";
               graficoSelecionado2.src = "graficos/Markov - Viagem 2 - E - forca.bmp";
-            } else if (viagemSelecionada === "Viagem2" && vagaoSelecionado === "VagaoF") {
-              graficoSelecionado1.src = "graficos/Markov - Viagem 2 - F - act.bmp";
-              graficoSelecionado2.src = "graficos/Markov - Viagem 2 - F - forca.bmp";
-            } else if (viagemSelecionada === "Viagem3" && vagaoSelecionado === "VagaoE") {
+              // ...
+            } else if (viagem === "Viagem3") {
               graficoSelecionado1.src = "graficos/Markov - Viagem 3 - E - act.bmp";
               graficoSelecionado2.src = "graficos/Markov - Viagem 3 - E - forca.bmp";
-            } else if (viagemSelecionada === "Viagem3" && vagaoSelecionado === "VagaoF") {
-              graficoSelecionado1.src = "graficos/Markov - Viagem 3- F - act.bmp";
-              graficoSelecionado2.src = "graficos/Markov - Viagem 3 - F - forca.bmp";
-            } else if (viagemSelecionada === "Viagem4" && vagaoSelecionado === "VagaoE") {
+            } else if (viagem === "Viagem4") {
               graficoSelecionado1.src = "graficos/Markov - Viagem 4 - E - act.bmp";
               graficoSelecionado2.src = "graficos/Markov - Viagem 4 - E - forca.bmp";
-            } else if (viagemSelecionada === "Viagem4" && vagaoSelecionado === "VagaoF") {
-              graficoSelecionado1.src = "graficos/Markov - Viagem 4 - F - act.bmp";
-              graficoSelecionado2.src = "graficos/Markov - Viagem 4 - F - forca.bmp";
-            } else if (viagemSelecionada === "Viagem5" && vagaoSelecionado === "VagaoE") {
+            } else if (viagem === "Viagem5") {
               graficoSelecionado1.src = "graficos/Markov - Viagem 5 - E - act.bmp";
               graficoSelecionado2.src = "graficos/Markov - Viagem 5 - E - forca.bmp";
-            } else if (viagemSelecionada === "Viagem5" && vagaoSelecionado === "VagaoF") {
-              graficoSelecionado1.src = "graficos/Markov - Viagem 5 - F - act.bmp";
-              graficoSelecionado2.src = "graficos/Markov - Viagem 5 - F - forca.bmp";
-            } else if (viagemSelecionada === "nada" && vagaoSelecionado === "nada") {
-              graficoSelecionado1.src = "graficos/EmBranco.png";
-              graficoSelecionado2.src = "graficos/EmBranco.png";
             }
+          }
+          viagem.addEventListener('change', () => {
+            const viagemSelecionada = viagem.value;
+            vagao.addEventListener('change', () => {
+              const vagaoSelecionado = vagao.value;
+              if (viagemSelecionada === "Viagem1" && vagaoSelecionado === "VagaoE") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 1 - E - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 1 - E - forca.bmp";
+              } else if (viagemSelecionada === "Viagem1" && vagaoSelecionado === "VagaoF") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 1 - F - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 1- F - forca.bmp";
+              } else if (viagemSelecionada === "Viagem2" && vagaoSelecionado === "VagaoE") {
+                graficoSelecionado1.src = "graficos/Markov -  Viagem 2 - E - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 2 - E - forca.bmp";
+              } else if (viagemSelecionada === "Viagem2" && vagaoSelecionado === "VagaoF") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 2 - F - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 2 - F - forca.bmp";
+              } else if (viagemSelecionada === "Viagem3" && vagaoSelecionado === "VagaoE") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 3 - E - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 3 - E - forca.bmp";
+              } else if (viagemSelecionada === "Viagem3" && vagaoSelecionado === "VagaoF") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 3- F - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 3 - F - forca.bmp";
+              } else if (viagemSelecionada === "Viagem4" && vagaoSelecionado === "VagaoE") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 4 - E - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 4 - E - forca.bmp";
+              } else if (viagemSelecionada === "Viagem4" && vagaoSelecionado === "VagaoF") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 4 - F - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 4 - F - forca.bmp";
+              } else if (viagemSelecionada === "Viagem5" && vagaoSelecionado === "VagaoE") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 5 - E - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 5 - E - forca.bmp";
+              } else if (viagemSelecionada === "Viagem5" && vagaoSelecionado === "VagaoF") {
+                graficoSelecionado1.src = "graficos/Markov - Viagem 5 - F - act.bmp";
+                graficoSelecionado2.src = "graficos/Markov - Viagem 5 - F - forca.bmp";
+              } else if (viagemSelecionada === "nada" && vagaoSelecionado === "nada") {
+                graficoSelecionado1.src = "graficos/EmBranco.png";
+                graficoSelecionado2.src = "graficos/EmBranco.png";
+              }
+            });
           });
-        });
-      </script>
+        </script>
+      </div>
+      </div>
+      <div id="tabela"></div>
     </div>
-    </div>
-    <div id="tabela"></div>
 
     </div>
     <footer class="footer">

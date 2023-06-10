@@ -318,16 +318,13 @@ th {
 
 /* Configuração do conteúdo da página de informações(info.html) */
 
-.container {
-  display: flex;
-  flex-direction: row;
-}
 
 .image {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-bottom: 5%;
 }
 
 .image img {
