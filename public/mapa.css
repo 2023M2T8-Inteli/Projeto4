@@ -19,7 +19,7 @@ html, body {
 }
   
 .map-controls {
-  background-color: rgba(255, 255, 255, 0.336);
+  background-color: rgba(127 123 123 / 0.47);
   border-radius: 4%;
   position: absolute;
   margin-left: calc(100% - 25vw);
@@ -29,7 +29,7 @@ html, body {
 }
 @media (max-width: 999px) {
   .map-controls {
-    background-color: rgba(255, 255, 255, 0.336);
+    background-color: rgba(127 123 123 / 0.47);
     border-radius: 4%;
     position: absolute;
     margin-left: calc(100% - 35vw);
