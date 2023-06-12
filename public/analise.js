@@ -59,7 +59,7 @@ fetch('http://127.0.0.1:3000/info_M_Vagoes')
     document.getElementById('tabela2').innerHTML = saida2;
     const table2 = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
+    th.innerHTML ="<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
     document.getElementById('tabela2').appendChild(th);
 
     for (let line of Dados) {  //for para criar a tabela indempendente do tamanho do vetor
