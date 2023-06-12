@@ -194,7 +194,7 @@ html, body {
   background-color: rgb(60, 60, 60);
   padding: 2vh;
   width: 100%;
-  height: 24vh;
+  height: 12vh;
 }
 
 .footer-conteudo {
@@ -385,8 +385,6 @@ th {
   padding: 20px;
   flex-direction: column
 }
-
-
 
 
 
