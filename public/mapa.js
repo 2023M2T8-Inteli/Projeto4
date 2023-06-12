@@ -113,6 +113,8 @@ const polylines = []; // Array para guardar as linhas do mapa
 
 // CHOQUE 1
 
+var dados_completo = [];
+
 $(document).on('change', '.form-check-input', function() { // Detectar alguma mudançã nos checkboxes
 
     if (viagem_n == "null") {
@@ -132,6 +134,10 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
         })
         .then((data) => {
             // var Dados = data;
+
+            dados_completo = data;
+
+            // desenhargrafico();
 
             // Variavel para guardar os dados da viagem selecionada do SQL query do backend
             var Dados = [];
@@ -496,3 +502,77 @@ $(document).on('change', '.form-check-input', function() {
     }
 
 });
+
+
+//////////////////////  TESTE DE GRÁFICO //////////////////////	
+
+// function desenhargrafico() {
+//     // Load the Visualization API and the corechart package.
+//     google.charts.load('current', {packages: ['corechart', 'line']});
+
+//     // Set a callback to run when the Google Visualization API is loaded.
+//     google.charts.setOnLoadCallback(drawChart);
+
+//     // Callback that creates and populates a data table,
+//     // instantiates the pie chart, passes in the data and
+//     // draws it.
+//     function drawChart() {
+
+//         var dados_grafico = [];
+
+//         console.log(dados_completo)
+
+//         for (var i = 0; i < dados_completo.length; i++) {
+
+//             const date_serial_number = dados_completo[i]["data_hora"];
+         
+//             const final_date = date_converter(date_serial_number); 
+
+//             dados_grafico.push([new Date(final_date), dados_completo[i]["act"]]);
+//         }
+
+//         console.log(dados_grafico)
+        
+
+//         var data = new google.visualization.DataTable();
+//         data.addColumn('datetime', 'Time');
+//         data.addColumn('number', 'Velocidade');
+  
+//         // data.addRows([
+//         //   [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+//         //   [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+//         //   [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+//         //   [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+//         //   [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+//         //   [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+//         //   [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+//         //   [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+//         //   [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+//         //   [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+//         //   [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+//         //   [66, 70], [67, 72], [68, 75], [69, 80]
+//         // ]);
+
+          
+//         data.addRows(dados_grafico);
+  
+//         var options = {
+//           hAxis: {
+//             title: 'Time'
+//           },
+//           vAxis: {
+//             title: 'Velocidade'
+//           },
+//           explorer: {
+//             actions: ['dragToZoom', 'rightClickToReset'],
+//             axis: 'horizontal',
+//             keepInBounds: true,
+//             maxZoomIn: 10
+//           }
+//         };
+  
+//         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  
+//         chart.draw(data, options);
+//     }
+// }
