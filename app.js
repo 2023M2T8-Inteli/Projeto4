@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const hostname = '127.0.0.1';
-const port = process.env.PORT || 1234;
+const port = process.env.PORT || 3000;
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'Banco_de_dados/dbProjeto.db';
 var bodyParser = require('body-parser');
@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var db = new sqlite3.Database(DBPATH);
 app.use(express.static('public'));
-var vetor = []
 
 //variáveis e constantes necessárias para o pleno funcionamento do projeto, além
 //de outras definições.
@@ -44,8 +43,8 @@ app.get('/info_M_Vagoes', (req, res) => {
         if (err) {
             throw err;
         }
-        vetor = rows
-        res.send(vetor)
+        res.send(rows)
+        console.log(rows)
     })
 })
 
