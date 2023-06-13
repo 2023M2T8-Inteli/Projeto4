@@ -187,10 +187,42 @@ function buscar_dados() {
                 }
             }
 
-            // if ( $('#vagaoE').is(':checked') == true ) {
-            //     console.log("é foda")
-            // }
+            // Get the selected variable from the user
+            var selectedVariable = $("#variableSelection").val();
 
+            // Get the selected value from the user (greater or smaller)
+            var selectedValue = $("#valueSelection").val();
+
+            // Get the threshold value entered by the user
+            var threshold = parseFloat($("#thresholdValue").val());
+
+            // Filter the data based on the selected variable, value, and threshold
+            Dados = Dados.filter(function(data) {
+                var valueToCompare;
+
+                // Determine which variable to compare based on the selected variable
+                if (selectedVariable === "none") {
+                    return data;
+                } else if (selectedVariable === "velocidade") {
+                    valueToCompare = data.velocidade;
+                } else if (selectedVariable === "f_maxima") {
+                    valueToCompare = data.f_maxima;
+                } else if (selectedVariable === "act") {
+                    valueToCompare = data.act;
+                } else if (selectedVariable === "peg") {
+                    valueToCompare = data.peg;
+                }
+
+                if (selectedValue === "greater") {
+                    return valueToCompare > threshold;
+                } else if (selectedValue === "smaller") {
+                    return valueToCompare < threshold;
+                }
+            });
+
+            console.log(Dados);
+
+            
             // Verificar se há dados para a viagem selecionada
             if (Dados.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
