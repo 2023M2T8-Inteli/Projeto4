@@ -1,5 +1,3 @@
-
-
 const url = '/info_medias';
 fetch(url)
   .then((response) => {
@@ -10,13 +8,20 @@ fetch(url)
     let saida = '';
     document.getElementById('tabela').innerHTML = saida;
     const table = document.createElement('table');
-    var th = document.createElement('th')
-    th.innerHTML = "<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
-    document.getElementById('tabela').appendChild(th); // Alteração aqui
+    const th = document.createElement('th');
+    th.innerHTML = "<td>Viagem|</td><td>Max Força(tf)|</td><td>Min Força(tf)|</td><td>Max Act(mm)|</td><td>Min Act(mm)|</td><td>Max PEG(PSI)|</td><td>Min PEG(PSI)</td>";
+    document.getElementById('tabela').appendChild(th);
+
+    var i = 1
 
     for (let line of Dados) {   //for para criar a tabela indempendente do tamanho do vetor
       const tr = document.createElement('tr');
+
       let td = document.createElement('td');
+      td.innerHTML = i;
+      tr.appendChild(td);
+
+      td = document.createElement('td');
       td.innerHTML = line.max_forca;
       tr.appendChild(td);
 
@@ -41,6 +46,9 @@ fetch(url)
       tr.appendChild(td);
 
       table.appendChild(tr);
+
+      i += 1
+      
     }
     const resultado = document.querySelector('#tabela');
     resultado.appendChild(table);
@@ -49,7 +57,7 @@ fetch(url)
     console.log(error);
   });
 
-fetch('http://127.0.0.1:3000/info_M_Vagoes')
+  fetch('http://127.0.0.1:3000/info_M_Vagoes')
   .then((response) => {
     return response.json();
   })
@@ -59,12 +67,19 @@ fetch('http://127.0.0.1:3000/info_M_Vagoes')
     document.getElementById('tabela2').innerHTML = saida2;
     const table2 = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML ="<td>Max Força  |  </td><td>Min Força  |  </td><td>Max Act  |  </td><td>Min Act  |  </td><td>Max Peg   |  </td><td>Min Peg</td>"
+    th.innerHTML ="<td>Viagem</td>|<td>Max Engate(tf)|  </td><td>Min Engate(tf)|  </td><td>Max Act(mm)|  </td><td>Min Act(mm)|  </td><td>Max PEG(PSI)|  </td><td>Min PEG(PSI)</td>"
     document.getElementById('tabela2').appendChild(th);
 
-    for (let line of Dados) {  //for para criar a tabela indempendente do tamanho do vetor
-      const tr2 = document.createElement('tr');
+    let i = 1; // move i initialization outside the loop
+
+    for (let line of Dados) {
+      const tr2 = document.createElement('tr'); // create a new row for each record
+
       let td = document.createElement('td');
+      td.innerHTML = i;
+      tr2.appendChild(td);
+
+      td = document.createElement('td');
       td.innerHTML = line.max_engante;
       tr2.appendChild(td);
 
@@ -88,7 +103,9 @@ fetch('http://127.0.0.1:3000/info_M_Vagoes')
       td.innerHTML = line.min_peg;
       tr2.appendChild(td);
 
-      table2.appendChild(tr2);
+      table2.appendChild(tr2); // append the row to the table
+
+      i += 1; // increment i
     }
     const resultado2 = document.querySelector('#tabela2');
     resultado2.appendChild(table2);
