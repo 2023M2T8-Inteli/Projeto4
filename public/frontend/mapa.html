@@ -106,7 +106,26 @@
               Vagões F
             </label>
           </div>
+
+            <label for="variableSelection">Select Variable:</label>
+          <select id="variableSelection">
+            <option value="velocidade">Velocidade</option>
+            <option value="f_maxima">Força Máxima</option>
+            <option value="act">ACT</option>
+            <option value="peg">PEG</option>
+          </select>
+
+          <label for="valueSelection">Select Value Condition:</label>
+        <select id="valueSelection">
+          <option value="greater">Greater than</option>
+          <option value="smaller">Smaller than</option>
+        </select>
+
+        <label for="thresholdValue">Threshold Value:</label>
+        <input type="number" id="thresholdValue" placeholder="Enter threshold value">
           
+          <br>
+
           <input class="btn btn-primary" type="submit" value="Buscar" onclick="buscar_dados()">
            
      </div>
