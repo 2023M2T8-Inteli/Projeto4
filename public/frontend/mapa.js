@@ -111,11 +111,32 @@ const markers = []; // Array para guardar os pontos do mapa
 const latAndlng = []; // Array para guardar as latitudes e longitudes dos pontos
 const polylines = []; // Array para guardar as linhas do mapa
 
+const markers1 = []; // Array para guardar os pontos do mapa
+const latAndlng1 = []; // Array para guardar as latitudes e longitudes dos pontos
+const polylines1 = []; // Array para guardar as linhas do mapa
+
+const markers_pico = []; // Array para guardar os pontos do mapa
+const latAndlng_pico = []; // Array para guardar as latitudes e longitudes dos pontos
+const polylines_pico = []; // Array para guardar as linhas do mapa
+
+
 // CHOQUE 1
 
 var dados_completo = [];
 
-$(document).on('change', '.form-check-input', function() { // Detectar alguma mudançã nos checkboxes
+// $(document).on('change', '.form-check-input', function() { // Detectar alguma mudançã nos checkboxes
+function buscar_dados() {
+
+    // Remover os markers do mapa
+    for (var j = 0; j < markers.length; j++) {
+        map.removeLayer(markers[j]);
+    }
+
+    // Remover as linhas do mapa
+    for(var k = 0; k < polylines.length; k++) {
+        map.removeLayer(polylines[k]);
+    }
+
 
     if (viagem_n == "null") {
         console.log("Selecione uma viagem")
@@ -133,6 +154,19 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
             return response.json();
         })
         .then((data) => {
+
+            var vagoes_selecionados = "";
+
+            if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "vagoesE e vagoesF";
+            } else if ($('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "F";
+            } else if ($('#vagaoE').is(':checked') == true) {
+                vagoes_selecionados = "E";
+            }
+
+            console.log(vagoes_selecionados);
+
             // var Dados = data;
 
             dados_completo = data;
@@ -144,14 +178,18 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
 
             // For para filtrar apenas os dados da viagem selecionada
             for (var i = 0; i < data.length; i++) {
-                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && vagoes_selecionados == "vagoesE e vagoesF") {
                     Dados.push(data[i]);
                 }
             }
 
-            if ( $('#vagaoE').is(':checked') == true ) {
-                console.log("é foda")
-            }
+            // if ( $('#vagaoE').is(':checked') == true ) {
+            //     console.log("é foda")
+            // }
 
             // Verificar se há dados para a viagem selecionada
             if (Dados.length == 0 && viagem_n == "null"){
@@ -229,6 +267,10 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
 
     } else { // Se o checkbox do choque 1 não estiver marcado, então os markers são removidos do mapa (se não forem removidos, os pontos começam a se sobrepor)
 
+        if ($('#vagaoE').is(':checked') == false){
+            console.log("vagão 1 disabled")
+        }
+
         // Remover os markers do mapa
         for (var j = 0; j < markers.length; j++) {
             map.removeLayer(markers[j]);
@@ -240,7 +282,7 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
         }
     }
 
-});
+
 
 // CHOQUE 2
 
@@ -252,12 +294,18 @@ var customIcon = L.icon({
   });
   
 
-const markers1 = []; // Array para guardar os pontos do mapa
-const latAndlng1 = []; // Array para guardar as latitudes e longitudes dos pontos
-const polylines1 = []; // Array para guardar as linhas do mapa
+    // Remover os markers do mapa
+    for (var j = 0; j < markers1.length; j++) {
+        map.removeLayer(markers1[j]);
+    }
+
+    // Remover as linhas do mapa
+    for(var k = 0; k < polylines1.length; k++) {
+        map.removeLayer(polylines1[k]);
+    }
 
 // Detectar alguma mudança nos checkboxes
-$(document).on('change', '.form-check-input', function() { 
+// $(document).on('change', '.form-check-input', function() {
 
     // Se o checkbox do choque 2 estiver marcado, então o fetch para requição dos dados é chamado
     if ( $('#choque2').is(':checked') == true ) {
@@ -272,6 +320,16 @@ $(document).on('change', '.form-check-input', function() {
             return response.json();
         })
         .then((data) => {
+            
+            var vagoes_selecionados = "";
+
+            if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "vagoesE e vagoesF";
+            } else if ($('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "F";
+            } else if ($('#vagaoE').is(':checked') == true) {
+                vagoes_selecionados = "E";
+            }
  
             // let Dados1 = data;
 
@@ -280,7 +338,11 @@ $(document).on('change', '.form-check-input', function() {
 
             // For para filtrar apenas os dados da viagem selecionada
             for (var i = 0; i < data.length; i++) {
-                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados1.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados1.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && vagoes_selecionados == "vagoesE e vagoesF") {
                     Dados1.push(data[i]);
                 }
             }
@@ -369,14 +431,20 @@ $(document).on('change', '.form-check-input', function() {
         }
     }
 
-});
+// });
 
 // PICOS
 
 
-const markers_pico = []; // Array para guardar os pontos do mapa
-const latAndlng_pico = []; // Array para guardar as latitudes e longitudes dos pontos
-const polylines_pico = []; // Array para guardar as linhas do mapa
+    // Remover os markers do mapa
+    for (var j = 0; j < markers_pico.length; j++) {
+        map.removeLayer(markers_pico[j]);
+    }
+
+    // Remover as linha s do mapa
+    for(var k = 0; k < polylines_pico.length; k++) {
+        map.removeLayer(polylines_pico[k]);
+    }
 
 var customIcon_pico = L.icon({
     iconUrl: 'images/marker-icon-orange.png',  // URL to the custom icon image
@@ -385,7 +453,7 @@ var customIcon_pico = L.icon({
   });
 
 // Detectar alguma mudança nos checkboxes
-$(document).on('change', '.form-check-input', function() { 
+// $(document).on('change', '.form-check-input', function() { 
 
     // Se o checkbox do pico estiver marcado, então o fetch para requição dos dados é chamado
     if ( $('#pico').is(':checked') == true ) {
@@ -400,6 +468,16 @@ $(document).on('change', '.form-check-input', function() {
             return response.json();
         })
         .then((data) => {
+
+            var vagoes_selecionados = "";
+
+            if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "vagoesE e vagoesF";
+            } else if ($('#vagaoF').is(':checked') == true) {
+                vagoes_selecionados = "F";
+            } else if ($('#vagaoE').is(':checked') == true) {
+                vagoes_selecionados = "E";
+            }
  
             // let Dados_pico = data;
 
@@ -408,7 +486,11 @@ $(document).on('change', '.form-check-input', function() {
 
             // For para filtrar apenas os dados da viagem selecionada
             for (var i = 0; i < data.length; i++) {
-                if (data[i]["id_viagem"] == parseInt(viagem_n)) {
+                if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados_pico.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && data[i]["tipo_vagao"] == vagoes_selecionados) {
+                    Dados_pico.push(data[i]);
+                } else if (data[i]["id_viagem"] == parseInt(viagem_n) && vagoes_selecionados == "vagoesE e vagoesF") {
                     Dados_pico.push(data[i]);
                 }
             }
@@ -499,14 +581,18 @@ $(document).on('change', '.form-check-input', function() {
             map.removeLayer(markers_pico[j]);
         }
 
-        // Remover as linhas do mapa
+        // Remover as linha s do mapa
         for(var k = 0; k < polylines_pico.length; k++) {
             map.removeLayer(polylines_pico[k]);
         }
     }
 
-});
+// });
+}
 
+function teste(){
+    console.log("teste")
+}
 
 //////////////////////  TESTE DE GRÁFICO //////////////////////	
 
