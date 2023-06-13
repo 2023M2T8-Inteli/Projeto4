@@ -149,6 +149,10 @@ $(document).on('change', '.form-check-input', function() { // Detectar alguma mu
                 }
             }
 
+            if ( $('#vagaoE').is(':checked') == true ) {
+                console.log("é foda")
+            }
+
             // Verificar se há dados para a viagem selecionada
             if (Dados.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
