@@ -104,6 +104,7 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.control.zoom({ position: 'bottomright' }).addTo(map);
+map.zoomControl.remove();
 
 
 var myRenderer = L.canvas({ padding: 0.5 });
@@ -800,3 +801,9 @@ L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
 //         chart.draw(data, options);
 //     }
 // }
+const lerMaisBtn = document.getElementById('toggleButton');
+const conteudo = document.getElementById('content-botao');
+
+lerMaisBtn.addEventListener('click', function() {
+  conteudo.classList.toggle('conteudo-visivel');
+});
