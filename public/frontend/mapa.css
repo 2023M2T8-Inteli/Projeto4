@@ -67,20 +67,11 @@ html, body {
   height: 1vh;
 
 }
-  /* Estilos para telas grandes */
-  @media (min-width: 999px) {
-    #toggleButton {
-      display: none;
-    }
-  }
 
-  /* Estilos para telas pequenas */
-  @media (max-width: 999px) {
-    #toggleButton {
-      display: block;
-    }
-
-    #content-botao {
-      display: none;
-    }
-  }
+#export-btn {
+  position: absolute;
+  top: 90%;
+  right: 20px;
+  padding: 10px;
+  z-index: 1;
+}
