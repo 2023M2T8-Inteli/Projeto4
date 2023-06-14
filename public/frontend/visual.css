@@ -444,7 +444,8 @@ th {
   align-items: center;
   justify-content: flex-start;
   padding: 20px;
-  flex-direction: column
+  flex-direction: column;
+  text-align: justify;
 }
 
 
