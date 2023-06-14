@@ -706,6 +706,7 @@ async function downloadImage(imageSrc) {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+    console.log("downloaded")
   }
 
 L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
