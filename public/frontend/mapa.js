@@ -313,7 +313,11 @@ function buscar_dados() {
             map.removeLayer(polylines[k]);
         }
     }
-
+    
+    var elemento = document.getElementById("content-botao");
+    elemento.style.display = "none";
+    var elemento2 = document.getElementById("toggleButton");
+    elemento2.style.display = "block";
 
 
 // CHOQUE 2
@@ -698,6 +702,7 @@ var customIcon_pico = L.icon({
 function teste(){
     console.log("teste")
 }
+
 
 //////////////////////  TESTE DE GRÁFICO //////////////////////	
 

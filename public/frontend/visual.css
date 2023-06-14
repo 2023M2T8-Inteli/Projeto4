@@ -95,7 +95,7 @@ a:hover {
   display: flex;
   max-width: 7.5vw;
   /* Defina o tamanho desejado para a tag <a> */
-  height: 11.5vh;
+  height: 11vh;
   /* Defina o tamanho desejado para a tag <a> */
   /* Oculta qualquer parte da imagem que esteja além do tamanho definido */
   margin-right: 15%;
@@ -150,18 +150,10 @@ nav {
     overflow-x: hidden;
   }
 
-  a:hover {
-    color: #055BA6;
-  }
 
   .link {
-    display: flex;
-    max-width: 7.5vw;
     /* Defina o tamanho desejado para a tag <a> */
-    height: 11.5vh;
-    /* Defina o tamanho desejado para a tag <a> */
-    /* Oculta qualquer parte da imagem que esteja além do tamanho definido */
-    margin-right: 15%;
+    height: 9.5vh;
   }
 
   .link img {
@@ -172,12 +164,7 @@ nav {
   }
 
   nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgb(54, 54, 54);
-    height: 12vh;
-    text-transform: uppercase;
+    height: 10vh;
   }
 
   .nav-list {
@@ -278,7 +265,8 @@ nav {
 
 /* Configuração conteúdo principal da (paghome.html) */
 header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 2;
   /* Define uma camada superior para a navbar */
 }
