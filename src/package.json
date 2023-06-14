@@ -2,7 +2,7 @@
   "name": "projeto4",
   "version": "1.0.0",
   "description": "Aplicação web para o IPT",
-  "main": "app.js",
+  "main": "/backend/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

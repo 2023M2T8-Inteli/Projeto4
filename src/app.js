@@ -134,6 +134,8 @@ app.get('/relatorio', (req, res) => {
     res.sendFile(__dirname + '/public/relatorio.html');
 }); //mostra o relatório da viagem.
 
+
+
 // upload de arquivos
 
 const storage = multer.diskStorage({
