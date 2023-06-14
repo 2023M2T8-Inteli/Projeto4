@@ -75,3 +75,20 @@ html, body {
   padding: 10px;
   z-index: 1;
 }
+  /* Estilos para telas grandes */
+  @media (min-width: 999px) {
+    #toggleButton {
+      display: none;
+    }
+  }
+
+  /* Estilos para telas pequenas */
+  @media (max-width: 999px) {
+    #toggleButton {
+      display: block;
+    }
+
+    #content-botao {
+      display: none;
+    }
+  }
