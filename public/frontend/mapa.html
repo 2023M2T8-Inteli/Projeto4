@@ -110,7 +110,7 @@
             <br>
 
             <label for="variableSelection">Selecione a variável:</label>
-          <select id="variableSelection">
+          <select id="variableSelection" class="form-select" aria-label="Default select example" style="width: 10vw;">
             <option value="none">Nenhuma</option>
             <option value="velocidade">Velocidade</option>
             <option value="f_maxima">Força Máxima</option>
@@ -119,17 +119,17 @@
           </select>
 
           <label for="valueSelection">Selecione a condição:</label>
-        <select id="valueSelection">
+        <select id="valueSelection" class="form-select" aria-label="Default select example" style="width: 10vw;">
           <option value="greater">Maior que</option>
           <option value="smaller">Menor que</option>
         </select>
 
         <label for="thresholdValue">Valor do limite:</label>
-        <input type="number" id="thresholdValue" placeholder="Insira o limite">
+        <input type="number" id="thresholdValue" placeholder="Insira o limite" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 10vw;">
           
           <br>
 
-          <input class="btn btn-primary" type="submit" value="Buscar" onclick="buscar_dados()">
+        <input class="btn btn-primary" type="submit" value="Buscar" onclick="buscar_dados()">
            
      </div>
   

@@ -568,9 +568,11 @@ var customIcon_pico = L.icon({
 
             // Get the selected value from the user (greater or smaller)
             var valorSelecionado = $("#valueSelection").val();
+            console.log(valorSelecionado);
 
             // Get the threshold value entered by the user
             var limite = parseFloat($("#thresholdValue").val());
+            console.log(limite);
 
             // Filter the data based on the selected variable, value, and threshold
             Dados_pico = Dados_pico.filter(function(data) {
