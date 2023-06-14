@@ -313,7 +313,11 @@ function buscar_dados() {
             map.removeLayer(polylines[k]);
         }
     }
-
+    
+    var elemento = document.getElementById("content-botao");
+    elemento.style.display = "none";
+    var elemento2 = document.getElementById("toggleButton");
+    elemento2.style.display = "block";
 
 
 // CHOQUE 2
@@ -720,6 +724,7 @@ L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
         // window.open("").document.write(img.outerHTML);
     });
 });
+
 
 //////////////////////  TESTE DE GRÁFICO //////////////////////	
 
