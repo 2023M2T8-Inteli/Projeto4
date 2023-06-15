@@ -4,6 +4,7 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'Banco_de_dados/dbProjeto.db';
+const multer = require('multer');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -12,8 +13,6 @@ app.use(express.static('public/frontend'));
 
 //variáveis e constantes necessárias para o pleno funcionamento do projeto, além
 //de outras definições.
-
-// app.use('Backend/', express.static(__dirname + '/src/Backend'));
 
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -36,9 +35,9 @@ app.get('/info_medias', (req, res) => {
     });
 }); //demonstra as arrays contendo os valores medios das viagens quando requisitado.
 
-app.get('/info_M_Vagoes', (req, res) => {
+app.get('/info_Vagoes_E', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var sql = `SELECT * FROM Resumo_vagoes WHERE tipo_dados="completo"`
+    var sql = `SELECT * FROM Resumo_vagoes WHERE tipo_dados="completo" AND tipo_vagao="E"`
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -47,6 +46,16 @@ app.get('/info_M_Vagoes', (req, res) => {
     })
 })
 
+app.get('/info_Vagoes_F', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var sql = `SELECT * FROM Resumo_vagoes WHERE tipo_dados="completo" AND tipo_vagao="F"`
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows)
+    })
+})
 
 app.get('/info', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -124,6 +133,50 @@ app.get('/relatorio', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.sendFile(__dirname + '/public/relatorio.html');
 }); //mostra o relatório da viagem.
+
+
+
+// upload de arquivos
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/uploads');
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  });
+  
+  const upload = multer({ storage: storage });
+  
+app.post('/upload1', upload.single('file'), function (req, res) {
+    // Aqui você pode acessar o arquivo enviado usando req.file
+    res.send('Arquivo enviado com sucesso!');
+  });
+app.get('/upload1', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    console.log(req.body);
+});
+
+
+app.get('/upload', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.sendFile(__dirname + '/public/frontend/alimentacao.html');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, hostname, () => {
     console.log('Servidor rodando em http://' + hostname + ':' + port);

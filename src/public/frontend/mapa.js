@@ -103,6 +103,9 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+L.control.zoom({ position: 'bottomright' }).addTo(map);
+map.zoomControl.remove();
+
 
 var myRenderer = L.canvas({ padding: 0.5 });
 
@@ -187,10 +190,42 @@ function buscar_dados() {
                 }
             }
 
-            // if ( $('#vagaoE').is(':checked') == true ) {
-            //     console.log("é foda")
-            // }
+            // Get the selected variable from the user
+            var variavelSelecionada = $("#variableSelection").val();
 
+            // Get the selected value from the user (greater or smaller)
+            var valorSelecionado = $("#valueSelection").val();
+
+            // Get the threshold value entered by the user
+            var limite = parseFloat($("#thresholdValue").val());
+
+            // Filter the data based on the selected variable, value, and threshold
+            Dados = Dados.filter(function(data) {
+                var valorComparartivo;
+
+                // Determine which variable to compare based on the selected variable
+                if (variavelSelecionada === "none") {
+                    return data;
+                } else if (variavelSelecionada === "velocidade") {
+                    valorComparartivo = data.velocidade;
+                } else if (variavelSelecionada === "f_maxima") {
+                    valorComparartivo = data.f_maxima;
+                } else if (variavelSelecionada === "act") {
+                    valorComparartivo = data.act;
+                } else if (variavelSelecionada === "peg") {
+                    valorComparartivo = data.peg;
+                }
+
+                if (valorSelecionado === "greater") {
+                    return valorComparartivo > limite;
+                } else if (valorSelecionado === "smaller") {
+                    return valorComparartivo < limite;
+                }
+            });
+
+            console.log(Dados);
+
+            
             // Verificar se há dados para a viagem selecionada
             if (Dados.length == 0 && viagem_n == "null"){
                 alert("Selecione uma viagem");
@@ -281,7 +316,11 @@ function buscar_dados() {
             map.removeLayer(polylines[k]);
         }
     }
-
+    
+    var elemento = document.getElementById("content-botao");
+    elemento.style.display = "none";
+    var elemento2 = document.getElementById("toggleButton");
+    elemento2.style.display = "block";
 
 
 // CHOQUE 2
@@ -346,6 +385,41 @@ var customIcon = L.icon({
                     Dados1.push(data[i]);
                 }
             }
+
+                // Get the selected variable from the user
+                var variavelSelecionada = $("#variableSelection").val();
+
+                // Get the selected value from the user (greater or smaller)
+                var valorSelecionado = $("#valueSelection").val();
+    
+                // Get the threshold value entered by the user
+                var limite = parseFloat($("#thresholdValue").val());
+    
+                // Filter the data based on the selected variable, value, and threshold
+                Dados1 = Dados1.filter(function(data) {
+                    var valorComparartivo;
+    
+                    // Determine which variable to compare based on the selected variable
+                    if (variavelSelecionada === "none") {
+                        return data;
+                    } else if (variavelSelecionada === "velocidade") {
+                        valorComparartivo = data.velocidade;
+                    } else if (variavelSelecionada === "f_maxima") {
+                        valorComparartivo = data.f_maxima;
+                    } else if (variavelSelecionada === "act") {
+                        valorComparartivo = data.act;
+                    } else if (variavelSelecionada === "peg") {
+                        valorComparartivo = data.peg;
+                    }
+    
+                    if (valorSelecionado === "greater") {
+                        return valorComparartivo > limite;
+                    } else if (valorSelecionado === "smaller") {
+                        return valorComparartivo < limite;
+                    }
+                });
+    
+                console.log(Dados1);
 
             // Verificar se há dados para a viagem selecionada
             if (Dados1.length == 0 && viagem_n == "null"){
@@ -494,6 +568,44 @@ var customIcon_pico = L.icon({
                     Dados_pico.push(data[i]);
                 }
             }
+
+
+            // Get the selected variable from the user
+            var variavelSelecionada = $("#variableSelection").val();
+
+            // Get the selected value from the user (greater or smaller)
+            var valorSelecionado = $("#valueSelection").val();
+            console.log(valorSelecionado);
+
+            // Get the threshold value entered by the user
+            var limite = parseFloat($("#thresholdValue").val());
+            console.log(limite);
+
+            // Filter the data based on the selected variable, value, and threshold
+            Dados_pico = Dados_pico.filter(function(data) {
+                var valorComparartivo;
+
+                // Determine which variable to compare based on the selected variable
+                if (variavelSelecionada === "none") {
+                    return data;
+                } else if (variavelSelecionada === "velocidade") {
+                    valorComparartivo = data.velocidade;
+                } else if (variavelSelecionada === "f_maxima") {
+                    valorComparartivo = data.f_maxima;
+                } else if (variavelSelecionada === "act") {
+                    valorComparartivo = data.act;
+                } else if (variavelSelecionada === "peg") {
+                    valorComparartivo = data.peg;
+                }
+
+                if (valorSelecionado === "greater") {
+                    return valorComparartivo > limite;
+                } else if (valorSelecionado === "smaller") {
+                    return valorComparartivo < limite;
+                }
+            });
+
+            console.log(Dados_pico);
             
             // Verificar se há dados para a viagem selecionada
             if (Dados_pico.length == 0 && viagem_n == "null"){
@@ -590,9 +702,32 @@ var customIcon_pico = L.icon({
 // });
 }
 
-function teste(){
-    console.log("teste")
-}
+async function downloadImage(imageSrc) {
+    const image = await fetch(imageSrc)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+  
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = 'mapa'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    console.log("downloaded")
+  }
+
+L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
+    leafletImage(map, function(err, canvas) {
+        var img = document.createElement('img');
+        var dimensions = map.getSize();
+        img.width = dimensions.x;
+        img.height = dimensions.y;
+        img.src = canvas.toDataURL();
+        downloadImage(img.src);
+        // window.open("").document.write(img.outerHTML);
+    });
+});
+
 
 //////////////////////  TESTE DE GRÁFICO //////////////////////	
 
@@ -666,3 +801,9 @@ function teste(){
 //         chart.draw(data, options);
 //     }
 // }
+const lerMaisBtn = document.getElementById('toggleButton');
+const conteudo = document.getElementById('content-botao');
+
+lerMaisBtn.addEventListener('click', function() {
+  conteudo.classList.toggle('conteudo-visivel');
+});
