@@ -51,7 +51,7 @@
     <div id="content-botao">
       <!-- Conteúdo a ser expandido/retraído -->
       <div class="map-controls">
-        <select id="select-viagem" class="form-select" aria-label="Default select example" style="width: 22.5vw;">
+        <select id="select-viagem" class="form-select" aria-label="Default select example">
          <option value="null" selected>Selecione a viagem</option>
          <option value="1">Viagem 1</option>
          <option value="2">Viagem 2</option>
@@ -133,15 +133,25 @@
            
            <br>
   
-         <input class="btn btn-primary" type="submit" value="Buscar" onclick="buscar_dados()">
-            
+         <input class="botao-caixa" type="submit" value="Buscar" onclick="buscar_dados()">
+         <button class="botao-caixa" id="export-btn">Export</button>
+         <button class="voltar" type="submit" style="background: transparent; border: none;">
+        <img src="images/seta_voltar.png"onclick="seta_voltar()" style="width: 4vh;">
+        </button>
       </div>
     </div>
     
     <button class="button-container" id="toggleButton" onclick="toggleContent()">Buscar
-    <img style="width: 3vh;" src="images/lupa.png"></button>
+    <img style="width: 3vh;" src="images/lupa.png">
+    <img class="seta" style="width: 3.5vh;" src="images/flecha_baixo.png"></button>
     
     <script>
+      function seta_voltar(){
+        var elemento = document.getElementById("content-botao");
+        elemento.style.display = "none";
+        var elemento2 = document.getElementById("toggleButton");
+        elemento2.style.display = "block";
+      }
       function toggleContent() {
         var contentDiv = document.getElementById("content-botao");
     
@@ -156,8 +166,6 @@
     </script>
   
   <div id="map" ></div>
-
-  <button id="export-btn">Export</button>
 
     <!-- Bootstrap Modal Choque 1-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
