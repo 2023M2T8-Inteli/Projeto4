@@ -199,7 +199,7 @@ function buscar_dados() {
                         Tipo vagão: ${Dados[i]["tipo_vagao"]}<br>
                         Data e hora: ${final_date}<br>
                         Velocidade: ${Dados[i]["velocidade"].toFixed(2)}<br>
-                        Posição: ${Dados[i]["posicao"]}<br>
+                        Posição: ${Dados[i]["posicao"].toFixed(2)}<br>
                         Placa virtual: ${Dados[i]["placa_virtual"]}<br>
                         Trecho: ${Dados[i]["trecho"]}<br>
                         Força Maxima: ${Dados[i]["f_maxima"].toFixed(2)}<br>
@@ -385,13 +385,13 @@ var customIcon = L.icon({
          
                          Tipo vagão: ${Dados1[i]["tipo_vagao"]}<br>
                          Data e hora: ${final_date}<br>
-                         Velocidade: ${Dados1[i]["velocidade"]}<br>
-                         Posição: ${Dados1[i]["posicao"]}<br>
+                         Velocidade: ${Dados1[i]["velocidade"].toFixed(2)}<br>
+                         Posição: ${Dados1[i]["posicao"].toFixed(2)}<br>
                          Placa virtual: ${Dados1[i]["placa_virtual"]}<br>
                          Trecho: ${Dados1[i]["trecho"]}<br>
-                         Força Maxima: ${Dados1[i]["f_maxima"]}<br>
-                         ACT: ${Dados1[i]["act"]}<br>
-                         Peg: ${Dados1[i]["peg"]}<br>
+                         Força Maxima: ${Dados1[i]["f_maxima"].toFixed(2)}<br>
+                         ACT: ${Dados1[i]["act"].toFixed(2)}<br>
+                         Peg: ${Dados1[i]["peg"].toFixed(2)}<br>
                      `;
                  }
          
@@ -570,14 +570,14 @@ var customIcon = L.icon({
          
                          Tipo vagão: ${Dados_pico[i]["tipo_vagao"]}<br>
                          Data e hora: ${final_date}<br>
-                         Velocidade: ${Dados_pico[i]["velocidade"]}<br>
-                         Posição: ${Dados_pico[i]["posicao"]}<br>
+                         Velocidade: ${Dados_pico[i]["velocidade"].toFixed(2)}<br>
+                         Posição: ${Dados_pico[i]["posicao"].toFixed(2)}<br>
                          Placa virtual: ${Dados_pico[i]["placa_virtual"]}<br>
                          Trecho: ${Dados_pico[i]["trecho"]}<br>
-                         Engate: ${Dados_pico[i]["engate"]}<br>
-                         Delta: ${Dados_pico[i]["delta"]}<br>
-                         ACT: ${Dados_pico[i]["act"]}<br>
-                         Peg: ${Dados_pico[i]["peg"]}<br>
+                         Engate: ${Dados_pico[i]["engate"].toFixed(2)}<br>
+                         Delta: ${Dados_pico[i]["delta"].toFixed(2)}<br>
+                         ACT: ${Dados_pico[i]["act"].toFixed(2)}<br>
+                         Peg: ${Dados_pico[i]["peg"].toFixed(2)}<br>
                      `;
                  }
          
