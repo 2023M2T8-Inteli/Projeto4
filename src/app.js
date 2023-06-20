@@ -164,20 +164,6 @@ app.get('/upload', (req, res) => {
     res.sendFile(__dirname + '/public/frontend/alimentacao.html');
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(port, hostname, () => {
     console.log('Servidor rodando em http://' + hostname + ':' + port);
 }); //escreve no console o "link" de acesso para a aplicação.
