@@ -269,13 +269,13 @@ function buscar_dados() {
 
                         Tipo vagão: ${Dados[i]["tipo_vagao"]}<br>
                         Data e hora: ${final_date}<br>
-                        Velocidade: ${Dados[i]["velocidade"]}<br>
+                        Velocidade: ${Dados[i]["velocidade"].toFixed(2)}<br>
                         Posição: ${Dados[i]["posicao"]}<br>
                         Placa virtual: ${Dados[i]["placa_virtual"]}<br>
                         Trecho: ${Dados[i]["trecho"]}<br>
-                        Força Maxima: ${Dados[i]["f_maxima"]}<br>
-                        ACT: ${Dados[i]["act"]}<br>
-                        Peg: ${Dados[i]["peg"]}<br>
+                        Força Maxima: ${Dados[i]["f_maxima"].toFixed(2)}<br>
+                        ACT: ${Dados[i]["act"].toFixed(2)}<br>
+                        Peg: ${Dados[i]["peg"].toFixed(2)}<br>
                     `;
                 }
 
