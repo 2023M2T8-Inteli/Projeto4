@@ -1,66 +1,3 @@
-
-// const map = L.map('map').setView([-23.55680857344921, -46.734749298708394], 16);
-
-// const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
-
-
-// // Ponto que vai receber o modal
-// var point2 = L.marker([-23.55620157344921, -46.734249298708394]).addTo(map);
-
-
-// var oi = "";
-
-// const url = '/choque1All';
-// fetch(url)
-// .then((response) => {
-// return response.json();
-// })
-// .then((data) => {
-// let Dados = data;
-
-// let saida = '';
-// let n_choque = '';
-// let viagem = '';
-// let lat = '';
-// let lon = '';
-// Dados.map(function(Dados) {
-//     viagem = `${Dados.id_viagem}`;
-//     n_choque += `${Dados.id_choque1}`;
-//     // lat = `${Dados.latitude}`;
-//     // lon = `${Dados.longitude}`;
-//     saida += `${Dados.act}`;
-// });
-
-// for(var i = 0; i < Dados.length; i++){
-//     console.log(Dados[i]["id_choque1"])
-//     let modal = L.marker([Dados[i]["latitude"], Dados[i]["longitude"]]).addTo(map).bindPopup(`<b>${Dados[i]["id_choque1"]}</b>`);;
-
-// // Manda os dados colhidos do banco a div que está dentro do modal
-// document.getElementById('dbresult').innerHTML = `<strong>Ponto</strong> <br> Número da viagem: ${viagem} <br> Número do choque: ${[Dados[i]["id_choque1"]]} <br> ACT: ${[Dados[i]["act"]]} <br>`;
-// // É usado o metodo 'on' para detectar o click no ponto e abrir o modal
-// }})
-// .catch(function(error) {
-//     console.log(error);
-// });
-// modal = 
-// modal.on('click', function() {
-//     $('#exampleModal').modal('show');
-// });
-
-
-// Versão nova do código
-
-// const map = L.map('map').setView([-23.55680857344921, -46.734749298708394], 16);
-
-// const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
 // Variáveis para guardar os valores da seleção de viagem
 var viagem_n = $("#select-viagem").val();
 
@@ -127,7 +64,7 @@ const polylines_pico = []; // Array para guardar as linhas do mapa
 
 var dados_completo = [];
 
-// $(document).on('change', '.form-check-input', function() { // Detectar alguma mudançã nos checkboxes
+// Função para buscar os dados do banco de dados
 function buscar_dados() {
 
     // Remover os markers do mapa
@@ -160,6 +97,7 @@ function buscar_dados() {
 
             var vagoes_selecionados = "";
 
+            // Verificar quais checkboxes estão marcados para fitrar os dados por tipo de vagão
             if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
                 vagoes_selecionados = "vagoesE e vagoesF";
             } else if ($('#vagaoF').is(':checked') == true) {
@@ -169,8 +107,6 @@ function buscar_dados() {
             }
 
             console.log(vagoes_selecionados);
-
-            // var Dados = data;
 
             dados_completo = data;
 
@@ -243,13 +179,6 @@ function buscar_dados() {
 
             map.flyTo([Dados[mediana]["latitude"], Dados[mediana]["longitude"]], 7);
 
-
-            // // Inciar o mapa com o API do Leaflet
-            // const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            //     maxZoom: 19,
-            //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            // }).addTo(map);
-
         // Criar os markers no mapa baseados nos pontos do banco de dados 
             for (let i = 0; i < Dados.length; i++) {
                 var marker = L.marker([Dados[i]["latitude"], Dados[i]["longitude"]]).addTo(map);
@@ -318,14 +247,13 @@ function buscar_dados() {
     }
     
 
-
 // CHOQUE 2
 
-// Define a custom icon with a different color
+// Define um diferente ícone para os markers
 var customIcon = L.icon({
-    iconUrl: 'images/marker-icon-yellow.png',  // URL to the custom icon image
-    iconSize: [25, 41],  // size of the icon image
-    iconAnchor: [12, 41],  // position of the icon anchor
+    iconUrl: 'images/marker-icon-yellow.png',  // URL da imagem
+    iconSize: [25, 41],  // Mudnaça do tamanho da ícone
+    iconAnchor: [12, 41],  // posição da ancora do ícone
   });
   
 
@@ -358,6 +286,7 @@ var customIcon = L.icon({
             
             var vagoes_selecionados = "";
 
+            // Verificar quais checkboxes estão marcados para fitrar os dados por tipo de vagão
             if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
                 vagoes_selecionados = "vagoesE e vagoesF";
             } else if ($('#vagaoF').is(':checked') == true) {
@@ -366,7 +295,6 @@ var customIcon = L.icon({
                 vagoes_selecionados = "E";
             }
  
-            // let Dados1 = data;
 
             // Variavel para guardar os dados da viagem selecionada do SQL query do backend
             var Dados1 = [];
@@ -382,20 +310,20 @@ var customIcon = L.icon({
                 }
             }
 
-                // Get the selected variable from the user
+                // Obtenha a variável selecionada do usuário
                 var variavelSelecionada = $("#variableSelection").val();
 
-                // Get the selected value from the user (greater or smaller)
+                // Obtém o valor selecionado do usuário (maior ou menor)
                 var valorSelecionado = $("#valueSelection").val();
     
-                // Get the threshold value entered by the user
+                // Obtém o valor limite inserido pelo usuário
                 var limite = parseFloat($("#thresholdValue").val());
     
-                // Filter the data based on the selected variable, value, and threshold
+                // Filtre os dados com base na variável, valor e limite selecionados
                 Dados1 = Dados1.filter(function(data) {
                     var valorComparartivo;
     
-                    // Determine which variable to compare based on the selected variable
+                    // Determine qual variável comparar com base na variável selecionada
                     if (variavelSelecionada === "none") {
                         return data;
                     } else if (variavelSelecionada === "velocidade") {
@@ -432,6 +360,7 @@ var customIcon = L.icon({
 
             console.log(Dados1);
 
+            // Criar o mapa com o centro nos valores da latitudes e longitudes da row do meio dos dados
             var mediana = Math.round(Dados1.length / 2);
 
             map.flyTo([Dados1[mediana]["latitude"], Dados1[mediana]["longitude"]], 7);
@@ -504,8 +433,6 @@ var customIcon = L.icon({
 // });
 
 // PICOS
-
-
     // Remover os markers do mapa
     for (var j = 0; j < markers_pico.length; j++) {
         map.removeLayer(markers_pico[j]);
@@ -516,15 +443,14 @@ var customIcon = L.icon({
         map.removeLayer(polylines_pico[k]);
     }
 
-var customIcon_pico = L.icon({
-    iconUrl: 'images/marker-icon-orange.png',  // URL to the custom icon image
-    iconSize: [25, 41],  // size of the icon image
-    iconAnchor: [12, 41],  // position of the icon anchor
-  });
+    // Define um diferente ícone para os markers
+    var customIcon_pico = L.icon({
+        iconUrl: 'images/marker-icon-orange.png',  // URL da imagem
+        iconSize: [25, 41],  // Mudnaça do tamanho da ícone
+        iconAnchor: [12, 41],  // Posição da ancora do ícone
+    });
 
 // Detectar alguma mudança nos checkboxes
-// $(document).on('change', '.form-check-input', function() { 
-
     // Se o checkbox do pico estiver marcado, então o fetch para requição dos dados é chamado
     if ( $('#pico').is(':checked') == true ) {
 
@@ -541,6 +467,7 @@ var customIcon_pico = L.icon({
 
             var vagoes_selecionados = "";
 
+           // Verificar quais checkboxes estão marcados para fitrar os dados por tipo de vagão 
             if ($('#vagaoE').is(':checked') == true && $('#vagaoF').is(':checked') == true) {
                 vagoes_selecionados = "vagoesE e vagoesF";
             } else if ($('#vagaoF').is(':checked') == true) {
@@ -566,22 +493,22 @@ var customIcon_pico = L.icon({
             }
 
 
-            // Get the selected variable from the user
+            // Obtenha a variável selecionada do usuário
             var variavelSelecionada = $("#variableSelection").val();
 
-            // Get the selected value from the user (greater or smaller)
+            // Obtém o valor selecionado do usuário (maior ou menor)
             var valorSelecionado = $("#valueSelection").val();
             console.log(valorSelecionado);
 
-            // Get the threshold value entered by the user
+            // Obtém o valor limite inserido pelo usuário
             var limite = parseFloat($("#thresholdValue").val());
             console.log(limite);
 
-            // Filter the data based on the selected variable, value, and threshold
+            // Filtre os dados com base na variável, valor e limite selecionados
             Dados_pico = Dados_pico.filter(function(data) {
                 var valorComparartivo;
 
-                // Determine which variable to compare based on the selected variable
+                // Determine qual variável comparar com base na variável selecionada
                 if (variavelSelecionada === "none") {
                     return data;
                 } else if (variavelSelecionada === "velocidade") {
@@ -617,6 +544,7 @@ var customIcon_pico = L.icon({
 
             console.log(Dados_pico);
 
+            // Criar o mapa com o centro nos valores da latitudes e longitudes da row do meio dos dados
             var mediana = Math.round(Dados_pico.length / 2);
 
             map.flyTo([Dados_pico[mediana]["latitude"], Dados_pico[mediana]["longitude"]], 7);
@@ -626,13 +554,6 @@ var customIcon_pico = L.icon({
              for (let i = 0; i < Dados_pico.length; i++) {
                  let marker_pico = L.marker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]], { icon: customIcon_pico }).addTo(map);
 
-                // Codigo para criar os circulos com o canvas
-                //  var circleMarker = L.circleMarker([Dados_pico[i]["latitude"], Dados_pico[i]["longitude"]], {
-                //     renderer: myRenderer,
-                //     color: '#3388ff'
-                // }).addTo(map);
-     
-         
                  const date_serial_number = Dados_pico[i]["data_hora"];
          
                  const final_date = date_converter(date_serial_number); 
@@ -698,27 +619,40 @@ var customIcon_pico = L.icon({
 // });
 }
 
+// Função para baixar uma imagem do mapa
 async function downloadImage(imageSrc) {
+    // Pega a imagem gerada pelo leaflet-image
     const image = await fetch(imageSrc)
+
+    // Converte a imagem para blob
     const imageBlog = await image.blob()
+
+    // Cria um URL para a imagem
     const imageURL = URL.createObjectURL(imageBlog)
-  
+    
+    // Cria um link para baixar a imagem
     const link = document.createElement('a')
     link.href = imageURL
     link.download = 'mapa'
     document.body.appendChild(link)
+
+    // Clica no link para baixar a imagem
     link.click()
     document.body.removeChild(link)
     console.log("downloaded")
   }
 
 L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
+    // Função para gerar a imagem do mapa
     leafletImage(map, function(err, canvas) {
+        // Cria um elemento de imagem e define a largura e altura para o tamanho da imagem do mapa
         var img = document.createElement('img');
         var dimensions = map.getSize();
         img.width = dimensions.x;
         img.height = dimensions.y;
         img.src = canvas.toDataURL();
+
+        // Chama a função para baixar a imagem gerada
         downloadImage(img.src);
         // window.open("").document.write(img.outerHTML);
     });
@@ -797,6 +731,8 @@ L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
 //         chart.draw(data, options);
 //     }
 // }
+
+// Abrir a opções buscar os dados e de filtros ao clicar no botão
 const lerMaisBtn = document.getElementById('toggleButton');
 const conteudo = document.getElementById('content-botao');
 
