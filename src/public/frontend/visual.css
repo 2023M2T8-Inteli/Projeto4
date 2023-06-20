@@ -267,7 +267,7 @@ nav {
 header {
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   /* Define uma camada superior para a navbar */
 }
 
@@ -444,6 +444,8 @@ th {
   display: flex;
   gap: 1%;
   width: 94%;
+  z-index: 2;
+  top: 12vh;
 }
 
 
