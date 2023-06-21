@@ -339,24 +339,20 @@ th {
 
 }
 
+
+/* Título da página do Saiba Mais */
 .text {
   text-align: left;
   margin-top: 2%;
 
 }
 
-
+/* Descrição da página de Saiba Mais */
 .descricao {
   text-align: justify;
   margin-top: 2%;
 }
 
-
-
-
-
-
-/* ÁREA DE TESTE */
 .container-help {
   position: fixed;
   left: 92.5%;
@@ -435,25 +431,4 @@ th {
     display: block;
   }
 }
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-#logodoipt {
-  width: 40%;
-  margin-left: 30%;
-  margin-top: -18%;
-  box-shadow: 0px 7px 11px rgb(33, 33, 33);
-}
-
-#legendaipt {
-  font-size: 90%;
-  margin-left: 66.5%;
-  margin-top: -13%;
-}
