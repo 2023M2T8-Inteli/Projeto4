@@ -180,7 +180,6 @@ ul.nav-list {
   padding: 2vh;
   width: 100%;
 
-
 }
 
 .footer-conteudo {
@@ -271,15 +270,15 @@ header {
 
 }
 #grafico_selecionado1{
-  width: 50%;
-  margin-left: 10%;
+  width: 65%;
   margin-bottom: -20vh;
+  margin-left: 3%;
 
 
 }
 #grafico_selecionado2{
-    width: 50%;
-    margin-left: 10%;
+    width: 65%;
+    margin-left: 3%;
 
 }
 
@@ -390,6 +389,12 @@ th {
   }
   #grafico_selecionado1{
     margin-bottom: -12vh;
+    margin-left: 10%;
+    width: 50%;
+  }
+  #grafico_selecionado2{
+    width: 50%;
+    margin-left: 10%;
   }
   .tabela-flex{
     margin-right: 22.5%;
@@ -433,5 +438,16 @@ th {
 
   .mobile-menu {
     display: block;
+  }
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
