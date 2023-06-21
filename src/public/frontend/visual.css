@@ -8,6 +8,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -365,10 +366,12 @@ th {
 @media (max-width: 999px) {
   body,
   html {
+    width: 100%;
     overflow-x: hidden;
   }
   .itens{
-    display: inline-block;
+    display: inline-block;  
+
  }
   .form-select{
       width: 45%;
@@ -392,7 +395,7 @@ th {
     
   }
   td{
-    font-size: 16px;
+    font-size: 14px;
   }
   .link {
     /* Defina o tamanho desejado para a tag <a> */
