@@ -338,24 +338,20 @@ th {
 
 }
 
+
+/* Título da página do Saiba Mais */
 .text {
   text-align: left;
   margin-top: 2%;
 
 }
 
-
+/* Descrição da página de Saiba Mais */
 .descricao {
   text-align: justify;
   margin-top: 2%;
 }
 
-
-
-
-
-
-/* ÁREA DE TESTE */
 .container-help {
   position: fixed;
   left: 92.5%;
