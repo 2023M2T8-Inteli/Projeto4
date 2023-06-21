@@ -28,6 +28,7 @@ body {
 
 }
 
+/* Configuração da logo na navbar.*/
 .logo {
   position: absolute;
   top: 50%;
@@ -182,21 +183,27 @@ ul.nav-list {
 
 }
 
+/* Configuração gearis dos conteúdos inseridos no footer*/
 .footer-conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Configuração da posição dos ícones das redes sociais do IPT.*/
 .footer-icones {
   display: flex;
   align-items: center;
 }
 
+
+/* Configuração do nome do IPT no footer.*/
+
 .footer-info {
   color: white;
 }
 
+/* Configuração dos ícones das redes sociais do IPT.*/
 .icon {
   display: inline-block;
   max-width: 100%;
@@ -251,10 +258,8 @@ header {
   
 .graficos {
   transform: rotate(-90deg);
-
-
-
 }
+
 .tabela-flex{
   display: flex;
   flex-direction: column;
@@ -296,8 +301,6 @@ header {
   cursor: pointer;
 }
 
-
-
 td {
   font-size: 18px;
   padding-left: 10px;
@@ -320,9 +323,7 @@ th {
 }
 
 
-
-/* Configuração do conteúdo da página de informações(info.html) */
-
+/* Configuração do conteúdo da página de Saiba Mais(info.html) */
 
 .container {
   display: flex;
@@ -331,8 +332,6 @@ th {
 
   height: calc(100% - 12vh);
   /* Ajuste a altura do container para excluir a altura da navbar */
-
-
 }
 
 
@@ -340,7 +339,6 @@ th {
 .text {
   text-align: left;
   margin-top: 2%;
-
 }
 
 /* Descrição da página de Saiba Mais */
@@ -360,8 +358,6 @@ th {
   background-color: #055BA6;
   cursor: pointer;
 }
-
-
 
 .nav-list.active {
   transform: translateX(0);
