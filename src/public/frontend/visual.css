@@ -181,7 +181,6 @@ ul.nav-list {
   padding: 2vh;
   width: 100%;
 
-
 }
 
 /* Configuração gearis dos conteúdos inseridos no footer*/
@@ -276,15 +275,15 @@ header {
 
 }
 #grafico_selecionado1{
-  width: 50%;
-  margin-left: 10%;
+  width: 65%;
   margin-bottom: -20vh;
+  margin-left: 3%;
 
 
 }
 #grafico_selecionado2{
-    width: 50%;
-    margin-left: 10%;
+    width: 65%;
+    margin-left: 3%;
 
 }
 
@@ -366,7 +365,7 @@ th {
 .nav-list.active {
   transform: translateX(0);
 }
-@media (max-width: 720px) {
+@media (max-width: 999px) {
   body,
   html {
     overflow-x: hidden;
@@ -382,6 +381,12 @@ th {
   }
   #grafico_selecionado1{
     margin-bottom: -12vh;
+    margin-left: 10%;
+    width: 50%;
+  }
+  #grafico_selecionado2{
+    width: 50%;
+    margin-left: 10%;
   }
   .tabela-flex{
     margin-right: 22.5%;
@@ -426,4 +431,14 @@ th {
     display: block;
   }
 }
+@keyframes navLinkFade { /*Animação da navbar quando a tela é pequena */
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
