@@ -19,14 +19,14 @@
 # Professores:
 ## Orientador
 
-- <a href="https://www.linkedin.com/">Marcelo Gonçalves</a>
+- <a href="[https://www.linkedin.com/](https://www.linkedin.com/in/marcelo-gon%C3%A7alves-phd-a550652)">Marcelo Gonçalves</a>
 
 ## Instrutores
 
-- <a href="https://www.linkedin.com/">Fátima Toledo</a>
-- <a href="https://www.linkedin.com/">Francisco Escobar</a>
-- <a href="https://www.linkedin.com/">Henrique Paiva</a>
-- <a href="https://www.linkedin.com/">Victor Quiroz</a>
+- <a href="[https://www.linkedin.com/](https://www.linkedin.com/in/fatima-toledo)">Fátima Toledo</a>
+- <a href="https://www.linkedin.com/in/francisco-escobar">Francisco Escobar</a>
+- <a href="https://www.linkedin.com/in/henrique-mohallem-paiva-6854b460/">Henrique Paiva</a>
+- <a href="https://www.linkedin.com/in/victorbarq">Victor Quiroz</a>
 
 ## 📝 Descrição
 
