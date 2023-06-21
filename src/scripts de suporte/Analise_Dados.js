@@ -195,6 +195,7 @@ async function getMaxMinValue() {
         minA = parseFloat(minA2.toFixed(2));
     }
 
+    // mostra no console as variáveis 
     console.log("Max F:", maxF);
     console.log("Min F:", minF);
     console.log("Max P:", maxP);
@@ -211,6 +212,7 @@ async function getMaxMinValue() {
         }
     });
 
+    // retorna as variáveis 
     return {
         maxF: maxF,
         minF: minF,

@@ -99,7 +99,31 @@ html, body {
   color: #046fcd;
 }
 
+.botao-caixa:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .voltar {
   margin-left: 10vw;
 
 }
+
+#graficoModal .modal-dialog {
+  max-width: 100%; /* Adjust the max-width as needed */
+  width: 900px; /* Adjust the width as needed */
+}
+
+.axis {
+  display: inline-block;
+  margin-right: 5%;
+}
+
+#myToast {
+  z-index: 5; /* Adjust the z-index value as needed */
+}
+
+/* #graficoModal {
+  width: 9000px;
+} */

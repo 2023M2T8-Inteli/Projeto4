@@ -4,7 +4,7 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do projeto
+# Site InovTech
 
 ## Nome do grupo: InovTech
 
@@ -26,13 +26,14 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
 
 |--> documentos<br>
   &emsp;| --> outros <br>
-  &emsp;| T8_G4_V3.0_Web_application_document.pdf <br>
+  &emsp;| T8_G4_V3.0_Web_application_document.docx<br>
   &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
-|--> Banco_de_dados<br>
-|--> Public (Frontend)<br>
-|--> scripts de suporte<br>
-|--> app.js<br>
+|--> scr<br>
+  &emsp;| --> Banco_de_dados <br>
+  &emsp;| --> Public (Frontend) <br>
+  &emsp;| --> scripts de suporte <br>
+  &emsp;| --> app.js <br>
 | readme.md<br>
 | license.txt
 
@@ -55,7 +56,7 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 3.  No modo administrador, abra o "prompt de comando" ou o "terminal" e, após,  abra a pasta no diretório raiz do repositório clonado e digite o segundo comando:
 
 ```sh
-npm install
+npm i
 ```
 
 Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
@@ -71,8 +72,22 @@ OBS: O site também pode ser acessado através desse link: https://j657tr-3000.c
 
 ## 🗃 Histórico de lançamentos
 
+* 5.0 - 22/06/2023
+    * Mudanças na página info.html
+    * Responsividade nas páginas analise.html, info.html, mapa.html, relatório.html
+    * Incrementos no banco de dados
+    * Incremento no Script Analise_Dados.js
+    * Revisão do WAD
+    * Criação do Script navbar.js
+* 4.0 - 09/06/2023
+    * Incrementos na página analise.html, info.html
+    * Criação do Script Analise_Dados.js, csvToDb_choques.js, csvToDb_Picos,js, mapa.js
+    * Análise dos testes de usabilidade realizados
+    * Criação da página mapa.html
+    * Criação do CSS mapa.css
+    * Criação da responsividade da página home.html
 * 3.0 - 26/05/2023
-    * Criação da página Home.html, analise.html, info.html, login.html, paghome.html 
+    * Criação da página Home.html, analise.html, info.html, paghome.html 
     * Criação do arquivo visual.css
     * Atualização do banco de dados
     * Criação do fetch no arquivo analise.js para integração do frontend com o backend
@@ -82,9 +97,7 @@ OBS: O site também pode ser acessado através desse link: https://j657tr-3000.c
     * Fluxograma da aplicação WEB
     * Criação do proótipo
 * 1.0 - 24/04/2023
-    * Atualização dos itens 1 (Visão geral do projeto)
-    * 2(Análise do problema)
-    * 3 (Requisitos do sistema).
+    * Atualização dos itens 1 (Visão geral do projeto), 2(Análise do problema) e 3 (Requisitos do sistema) do WAD.
 
 
 
