@@ -23,7 +23,7 @@
 
 ## Instrutores
 
-- <a href="https://www.linkedin.com/](https://www.linkedin.com/in/fatima-toledo)">Fátima Toledo</a>
+- <a href="https://www.linkedin.com/in/fatima-toledo/">Fátima Toledo</a>
 - <a href="https://www.linkedin.com/in/francisco-escobar">Francisco Escobar</a>
 - <a href="https://www.linkedin.com/in/henrique-mohallem-paiva-6854b460/">Henrique Paiva</a>
 - <a href="https://www.linkedin.com/in/victorbarq">Victor Quiroz</a>
