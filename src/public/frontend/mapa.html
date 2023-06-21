@@ -143,6 +143,7 @@
          <input class="botao-caixa" type="submit" value="Buscar" onclick="buscar_dados()">
          <button class="botao-caixa" id="export-btn">Export</button>
          <button id="botao-grafico" type="button" class="botao-caixa" data-bs-toggle="modal" data-bs-target="#graficoModal" disabled>Gráficos</button>
+         <!-- <button type="button" class="btn btn-primary" id="showToastBtn">Show Toast</button> -->
          <button class="voltar" type="submit" style="background: transparent; border: none;">
         <img src="images/seta_voltar.png"onclick="seta_voltar()" style="width: 4vh;">
         </button>
@@ -152,6 +153,32 @@
     <button class="button-container" id="toggleButton" onclick="toggleContent()">Buscar
     <img style="width: 3vh;" src="images/lupa.png">
     <img class="seta" style="width: 3.5vh;" src="images/flecha_baixo.png"></button>
+    
+    <!-- Toast para notificar que a exportação começou -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="export-comecou" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Exportação da Imagem</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          A imagem da viagem está sendo exportada. 
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast para notificar que a exportação termiaou -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="export-terminou" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Exportação da Imagem</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Exportação finalizada! &#x2705;
+        </div>
+      </div>
+    </div>
     
     <script>
       function seta_voltar(){
