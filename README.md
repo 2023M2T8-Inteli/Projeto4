@@ -19,7 +19,7 @@
 # Professores:
 ## Orientador
 
-- <a href="[https://www.linkedin.com/](https://www.linkedin.com/in/marcelo-gon%C3%A7alves-phd-a550652)">Marcelo Gonçalves</a>
+- <a href="https://www.linkedin.com/](https://www.linkedin.com/in/marcelo-gon%C3%A7alves-phd-a550652">Marcelo Gonçalves</a>
 
 ## Instrutores
 
