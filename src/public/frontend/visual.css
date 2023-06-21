@@ -211,7 +211,6 @@ ul.nav-list {
 header {
   position: sticky;
   width: 100%;
-  z-index: 1;
   /* Define uma camada superior para a navbar */
 }
 
@@ -259,9 +258,8 @@ header {
 .tabela-flex{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 1.5%;
-  margin-right: 1.5%;
+  margin-left: 3%;
+  margin-right: 1.5vh;
   
 }
 .form-select{
@@ -271,7 +269,6 @@ header {
 }
 #grafico_selecionado1{
   width: 65%;
-  margin-bottom: -20vh;
   margin-left: 3%;
 
 
@@ -382,6 +379,7 @@ th {
   }
   .content-graficos{
       margin-left: 3.5vh;
+
   }
   #grafico_selecionado1{
     margin-bottom: -12vh;
@@ -410,10 +408,13 @@ th {
 
   nav {
     height: 10vh;
+    
+
 
   }
 
   .nav-list {
+
     position: absolute;
     top: 8vh;
     right: 0;
