@@ -4,21 +4,21 @@ const app = express()
 const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 const sqlite3 = require('sqlite3').verbose();
-const DBPATH = 'Banco_de_dados/dbProjeto.db';
+const DBPATH = 'src/Banco_de_dados/dbProjeto.db';
 const multer = require('multer');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // define a variavel db como o banco de dados sqlite 
 var db = new sqlite3.Database(DBPATH);
-app.use(express.static('public/frontend'));
+app.use(express.static(process.cwd()+'/src/public/frontend'));
 
 //variáveis e constantes necessárias para o pleno funcionamento do projeto, além
 //de outras definições.
 
 app.get('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.sendFile(__dirname + '/public/frontend/paghome.html');
+    res.sendFile( process.cwd() + '/src/public/frontend/paghome.html');
 }); //define o arquivo paghome como default quando se acessa o url do site, demonstrando-o.
 
 app.get('/analise', (req, res) => {
