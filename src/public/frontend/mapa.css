@@ -119,6 +119,10 @@ html, body {
   margin-right: 5%;
 }
 
+#myToast {
+  z-index: 5; /* Adjust the z-index value as needed */
+}
+
 /* #graficoModal {
   width: 9000px;
 } */

@@ -659,10 +659,12 @@ async function downloadImage(imageSrc) {
     // Clica no link para baixar a imagem
     link.click()
     document.body.removeChild(link)
+    $('#export-terminou').toast('show');
     console.log("downloaded")
   }
 
 L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
+    $('#export-comecou').toast('show');
     // Função para gerar a imagem do mapa
     leafletImage(map, function(err, canvas) {
         // Cria um elemento de imagem e define a largura e altura para o tamanho da imagem do mapa
@@ -678,8 +680,12 @@ L.DomEvent.on(document.getElementById('export-btn'), 'click', function() {
     });
 });
 
+$('#showToastBtn').click(function() {
+    console.log("toast")
+    $('#liveToast').toast('show');
+  });
 
-//////////////////////  TESTE DE GRÁFICO //////////////////////	
+////////////////////// GRÁFICO //////////////////////	
 
 function desenhargrafico() {
     // Load the Visualization API and the corechart package.
