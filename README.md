@@ -16,6 +16,18 @@
 - <a href="https://www.linkedin.com/">Mário Ventura</a> 
 - <a href="https://www.linkedin.com/in/rodrigo-sales-07/">Rodrigo Sales</a>
 
+# Professores:
+## Orientador
+
+- <a href="https://www.linkedin.com/">Marcelo Gonçalves</a>
+
+## Instrutores
+
+- <a href="https://www.linkedin.com/">Fátima Toledo</a>
+- <a href="https://www.linkedin.com/">Francisco Escobar</a>
+- <a href="https://www.linkedin.com/">Henrique Paiva</a>
+- <a href="https://www.linkedin.com/">Victor Quiroz</a>
+
 ## 📝 Descrição
 
 Uma das áreas de atuação do IPT na atualidade diz respeito ao monitoramento e avaliação estrutural com direcionamento ao segmento ferroviário, proporcionando as informações necessárias para as tomadas de decisão e minimizando os custos operacionais. Essas informações são apresentadas aos clientes no formato de volumosos relatórios, repletos de textos, gráficos, mapas e tabelas, disponibilizado de forma impressa aos usuários. A grande problemática, entretanto, está na grande quantidade de tempo gasta para análise e entendimento destes ensaios, dificultando, portanto, o processo de tomada de decisões.
@@ -103,10 +115,18 @@ OBS: O site também pode ser acessado através desse link: https://j657tr-3000.c
 
 ## 📋 Licença/License
 
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2023M2T8-Inteli/Projeto4">Site InovTech</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/2023M2T8-Inteli/Projeto4">Inteli, Eduarda Cardoso de Souza, Fernando Machado ,Gabrielly Vitor, Luan Ramos, Mário Ventura ,Rodrigo Sales</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
 
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto:
 
-1. <https://creativecommons.org/share-your-work/>
+1. ADMIN@DBSCHEMA.COM. DbSchema | Professional GUI Client for Database Management. Disponível em: <https://dbschema.com/>. Acesso em: 20/04/2023.
+2. DB Browser for SQLite. Disponível em: <https://sqlitebrowser.org/>. Acesso em: 20/04/2023.
+3. SQLITE. SQLite Home Page. Disponível em: <https://www.sqlite.org/index.html>. Acesso em: 20/04/2023.
+4. MICROSOFT. Visual Studio Code. Disponível em: <https://code.visualstudio.com/>. Acesso em: 20/04/2023.
+5. NODE.JS. Node.js. Disponível em: <https://nodejs.org/en>. Acesso em: 20/04/2023.
+6. OPENAI. ChatGPT. Disponível em: <https://chat.openai.com/>. Acesso em: 11/05/2023.
+7. Poe - Fast, Helpful AI Chat. Disponível em: <https://poe.com/>. Acesso em: 08/06/2023.
+8. IPT - Instituto de Pesquisas Tecnológicas. Disponível em: <https://www.ipt.br/>. Acesso em: 17/04/2023.
+
