@@ -142,6 +142,7 @@
   
          <input class="botao-caixa" type="submit" value="Buscar" onclick="buscar_dados()">
          <button class="botao-caixa" id="export-btn">Export</button>
+         <button id="botao-grafico" type="button" class="botao-caixa" data-bs-toggle="modal" data-bs-target="#graficoModal" disabled>Gráficos</button>
          <button class="voltar" type="submit" style="background: transparent; border: none;">
         <img src="images/seta_voltar.png"onclick="seta_voltar()" style="width: 4vh;">
         </button>
@@ -231,6 +232,64 @@
       </div>
     </div>
 
+    <!-- Bootstrap modal para o gráfico -->
+    <div class="modal fade" id="graficoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Grafico</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="selecao-axis">
+              <div class="axis">
+            <label for="variableSelection">X-Axis:</label>
+            <select id="grafico-xAxis" class="form-select" aria-label="Default select example" style="width: 10vw;">
+              <option value="none">Nenhuma</option>
+              <option value="data_hora">Tempo</option>
+              <option value="velocidade">Velocidade</option>
+              <option value="f_maxima">Força Máxima</option>
+              <option value="act">ACT</option>
+              <option value="peg">PEG</option>
+            </select>
+              </div>
+
+            <div class="axis">
+            <label for="variableSelection">Y-Axis:</label>
+            <select id="grafico-yAxis" class="form-select" aria-label="Default select example" style="width: 10vw;">
+              <option value="none">Nenhuma</option>
+              <option value="data_hora">Tempo</option>
+              <option value="velocidade">Velocidade</option>
+              <option value="f_maxima">Força Máxima</option>
+              <option value="act">ACT</option>
+              <option value="peg">PEG</option>
+            </select>
+            </div>
+
+            <button class="btn btn-primary" type="submit" onclick="desenhargrafico()">Submit</button>
+
+          </div>
+
+            
+
+            <br> 
+
+              <!--Div that will hold the pie chart-->
+              <h3>Grafico de linhas</h3>
+              <div id="chart_div" style="width: 100%;"></div>
+              <br>  
+              <h3>Grafico de dispersão</h3>
+              <div id="chart_div2" style="width: 100%;"></div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="legenda" style="width: 22.5vw;">
       
       <div class="legenda-item">
@@ -252,8 +311,6 @@
       </div>
 
     </div>
-      <!--Div that will hold the pie chart-->
-      <div id="chart_div"></div>
 
     <script src="mapa.js" ></script>
 

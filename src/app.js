@@ -82,7 +82,7 @@ app.get('/choque1', (req, res) => {
 
 app.get('/choque1All', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var sql = `SELECT * FROM Choque1`;
+    var sql = `SELECT * FROM Choque1 ORDER BY data_hora ASC`;
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
