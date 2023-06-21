@@ -16,12 +16,12 @@
 - <a href="https://www.linkedin.com/">Mário Ventura</a> 
 - <a href="https://www.linkedin.com/in/rodrigo-sales-07/">Rodrigo Sales</a>
 
-## Professores:
-# Orientador
+# Professores:
+## Orientador
 
 - <a href="https://www.linkedin.com/">Marcelo Gonçalves</a>
 
-# Instrutores
+## Instrutores
 
 - <a href="https://www.linkedin.com/">Fátima Toledo</a>
 - <a href="https://www.linkedin.com/">Francisco Escobar</a>
