@@ -71,8 +71,22 @@ OBS: O site também pode ser acessado através desse link: https://j657tr-3000.c
 
 ## 🗃 Histórico de lançamentos
 
+* 5.0 - 22/06/2023
+    * Mudanças na página info.html
+    * Responsividade nas páginas analise.html, info.html, mapa.html, relatório.html
+    * Incrementos no banco de dados
+    * Incremento no Script Analise_Dados.js
+    * Revisão do WAD
+    * Criação do Script navbar.js
+* 4.0 - 09/06/2023
+    * Incrementos na página analise.html, info.html
+    * Criação do Script Analise_Dados.js, csvToDb_choques.js, csvToDb_Picos,js, mapa.js
+    * Análise dos testes de usabilidade realizados
+    * Criação da página mapa.html
+    * Criação do CSS mapa.css
+    * Criação da responsividade da página home.html
 * 3.0 - 26/05/2023
-    * Criação da página Home.html, analise.html, info.html, login.html, paghome.html 
+    * Criação da página Home.html, analise.html, info.html, paghome.html 
     * Criação do arquivo visual.css
     * Atualização do banco de dados
     * Criação do fetch no arquivo analise.js para integração do frontend com o backend
@@ -82,9 +96,7 @@ OBS: O site também pode ser acessado através desse link: https://j657tr-3000.c
     * Fluxograma da aplicação WEB
     * Criação do proótipo
 * 1.0 - 24/04/2023
-    * Atualização dos itens 1 (Visão geral do projeto)
-    * 2(Análise do problema)
-    * 3 (Requisitos do sistema).
+    * Atualização dos itens 1 (Visão geral do projeto), 2(Análise do problema) e 3 (Requisitos do sistema) do WAD.
 
 
 
