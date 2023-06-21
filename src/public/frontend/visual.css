@@ -440,7 +440,7 @@ th {
     display: block;
   }
 }
-@keyframes navLinkFade {
+@keyframes navLinkFade { /*Animação da navbar quando a tela é pequena */
   from {
     opacity: 0;
     transform: translateX(50px);
