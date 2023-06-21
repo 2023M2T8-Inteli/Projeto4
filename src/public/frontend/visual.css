@@ -116,7 +116,7 @@ nav {
   background: rgb(54, 54, 54);
   height: 12vh;
   text-transform: uppercase;
-  
+
 
 }
 
@@ -130,7 +130,8 @@ nav {
   letter-spacing: 3px;
   margin-left: 40px;
 }
-ul.nav-list{
+
+ul.nav-list {
   margin-right: -5vw;
 }
 
@@ -149,10 +150,12 @@ ul.nav-list{
 
 /* Configurações de responsividade da NAVBAR */
 @media (max-width: 999px) {
+
   body,
   html {
     overflow-x: hidden;
   }
+
   .link {
     /* Defina o tamanho desejado para a tag <a> */
     height: 9.5vh;
@@ -228,7 +231,7 @@ ul.nav-list{
 
 .content {
   flex-grow: 1;
-  min-height: calc(100% - 10vh);
+  min-height: calc(100% - 12vh);
   /* Subtrai a altura da navbar e do rodapé */
 }
 
@@ -460,18 +463,23 @@ th {
   margin-top: 12vh;
   flex-direction: column;
 
-  height: calc(100% - 12vh); /* Ajuste a altura do container para excluir a altura da navbar */
+  height: calc(100% - 12vh);
+  /* Ajuste a altura do container para excluir a altura da navbar */
 
-  
+
 }
 
 .text {
-  text-align: center;
+  text-align: left;
+  margin-top: 2%;
+
 }
 
 
 .descricao {
   text-align: justify;
+  margin-top: 2%;
+  margin-right: 50%;
 }
 
 
@@ -480,14 +488,27 @@ th {
 
 
 /* ÁREA DE TESTE */
-.container-help{
+.container-help {
   position: fixed;
   left: 92.5%;
   top: 78%;
 }
 
-.nav-list img:hover{
+.nav-list img:hover {
   border-radius: 100%;
   background-color: #055BA6;
   cursor: pointer;
+}
+
+#logodoipt {
+  width: 40%;
+  margin-left: 55%;
+  margin-top: -50%;
+  box-shadow: 0px 7px 11px rgb(33, 33, 33);
+}
+
+#legendaipt {
+  font-size: 90%;
+  margin-left: 66.5%;
+  margin-top: -13%;
 }
