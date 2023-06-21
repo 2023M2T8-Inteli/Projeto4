@@ -42,25 +42,25 @@ body {
 /* Configurações barra de rolagem */
 /* Barra de rolagem para navegadores Webkit (Chrome, Safari, Opera) */
 ::-webkit-scrollbar {
-  width: 15px;
-  background-color: rgba(0, 0, 0, 0.651);
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.116);
   /* Define a cor de fundo transparente */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.747);
+  background-color: rgba(28, 166, 181, 0.74);
   /* Define a cor da barra de rolagem */
 }
 
 /* Barra de rolagem para navegadores Firefox */
 ::-moz-scrollbar {
-  width: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0.116);
   /* Define a cor de fundo transparente */
 }
 
 ::-moz-scrollbar-thumb {
-  background-color: #000;
+  background-color: rgba(28, 166, 181, 0.74);
   /* Define a cor da barra de rolagem */
   border-radius: 5px;
   /* Define o raio de borda da barra de rolagem */
@@ -68,13 +68,13 @@ body {
 
 /* Barra de rolagem para navegadores Internet Explorer e Edge */
 ::-ms-scrollbar {
-  width: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0.116);
   /* Define a cor de fundo transparente */
 }
 
 ::-ms-scrollbar-thumb {
-  background-color: #000;
+  background-color: rgba(28, 166, 181, 0.74);
   /* Define a cor da barra de rolagem */
   border-radius: 5px;
   /* Define o raio de borda da barra de rolagem */
@@ -267,7 +267,11 @@ header {
   margin-right: 1.5vh;
   
 }
+.form-select{
+  width: 20%;
+  margin-left: 1.5vw;
 
+}
 #grafico_selecionado1{
   width: 65%;
   margin-left: 3%;
@@ -383,8 +387,12 @@ th {
     margin-left: 10%;
   }
   .tabela-flex{
-    margin-right: 22.5%;
+    align-items: center;
+    margin-right: 20%;
     
+  }
+  td{
+    font-size: 16px;
   }
   .link {
     /* Defina o tamanho desejado para a tag <a> */
