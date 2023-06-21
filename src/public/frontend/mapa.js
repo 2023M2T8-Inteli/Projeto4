@@ -1,6 +1,15 @@
 // Variáveis para guardar os valores da seleção de viagem
 var viagem_n = $("#select-viagem").val();
 
+$(document).ready(function() {
+    $('#modal-tutorial-mapa').modal('show');
+  });
+
+$('#helpButton').on('click', function() {
+    $('#modal-tutorial-mapa').modal('show');
+});
+
+
 console.log(viagem_n);
 
 $(document).on('change', '#select-viagem', function() {
@@ -32,7 +41,7 @@ function date_converter(date_number) {
 }
 
 // Inicar o mapa
-const map = L.map('map').setView([-23.55680857344921, -46.734749298708394], 16);
+const map = L.map('map').setView([-11.049041, -49.833081], 3.5);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -210,13 +219,13 @@ function buscar_dados() {
 
                         Tipo vagão: ${Dados[i]["tipo_vagao"]}<br>
                         Data e hora: ${final_date}<br>
-                        Velocidade: ${Dados[i]["velocidade"].toFixed(2)}<br>
-                        Posição: ${Dados[i]["posicao"].toFixed(2)}<br>
+                        Velocidade: ${Dados[i]["velocidade"].toFixed(2)} km/h<br>
+                        Posição: ${Dados[i]["posicao"].toFixed(2)} km<br>
                         Placa virtual: ${Dados[i]["placa_virtual"]}<br>
                         Trecho: ${Dados[i]["trecho"]}<br>
-                        Força Maxima: ${Dados[i]["f_maxima"].toFixed(2)}<br>
-                        ACT: ${Dados[i]["act"].toFixed(2)}<br>
-                        Peg: ${Dados[i]["peg"].toFixed(2)}<br>
+                        Força Maxima: ${Dados[i]["f_maxima"].toFixed(2)} tf<br>
+                        ACT: ${Dados[i]["act"].toFixed(2)} mm<br>
+                        Peg: ${Dados[i]["peg"].toFixed(2)} PSI<br>
                     `;
                 }
 
@@ -401,13 +410,13 @@ var customIcon = L.icon({
          
                          Tipo vagão: ${Dados1[i]["tipo_vagao"]}<br>
                          Data e hora: ${final_date}<br>
-                         Velocidade: ${Dados1[i]["velocidade"].toFixed(2)}<br>
-                         Posição: ${Dados1[i]["posicao"].toFixed(2)}<br>
+                         Velocidade: ${Dados1[i]["velocidade"].toFixed(2)} km/h<br>
+                         Posição: ${Dados1[i]["posicao"].toFixed(2)} km<br>
                          Placa virtual: ${Dados1[i]["placa_virtual"]}<br>
                          Trecho: ${Dados1[i]["trecho"]}<br>
-                         Força Maxima: ${Dados1[i]["f_maxima"].toFixed(2)}<br>
-                         ACT: ${Dados1[i]["act"].toFixed(2)}<br>
-                         Peg: ${Dados1[i]["peg"].toFixed(2)}<br>
+                         Força Maxima: ${Dados1[i]["f_maxima"].toFixed(2)} tf<br>
+                         ACT: ${Dados1[i]["act"].toFixed(2)} mm<br>
+                         Peg: ${Dados1[i]["peg"].toFixed(2)} PSI<br>
                      `;
                  }
          
@@ -590,14 +599,14 @@ var customIcon = L.icon({
          
                          Tipo vagão: ${Dados_pico[i]["tipo_vagao"]}<br>
                          Data e hora: ${final_date}<br>
-                         Velocidade: ${Dados_pico[i]["velocidade"].toFixed(2)}<br>
-                         Posição: ${Dados_pico[i]["posicao"].toFixed(2)}<br>
+                         Velocidade: ${Dados_pico[i]["velocidade"].toFixed(2)} km/h<br>
+                         Posição: ${Dados_pico[i]["posicao"].toFixed(2)} km<br>
                          Placa virtual: ${Dados_pico[i]["placa_virtual"]}<br>
                          Trecho: ${Dados_pico[i]["trecho"]}<br>
-                         Engate: ${Dados_pico[i]["engate"].toFixed(2)}<br>
-                         Delta: ${Dados_pico[i]["delta"].toFixed(2)}<br>
-                         ACT: ${Dados_pico[i]["act"].toFixed(2)}<br>
-                         Peg: ${Dados_pico[i]["peg"].toFixed(2)}<br>
+                         Engate: ${Dados_pico[i]["engate"].toFixed(2)} tf<br>
+                         Delta: ${Dados_pico[i]["delta"].toFixed(2)} T(s)<br>
+                         ACT: ${Dados_pico[i]["act"].toFixed(2)} mm<br>
+                         Peg: ${Dados_pico[i]["peg"].toFixed(2)} PSI<br>
                      `;
                  }
          
