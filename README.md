@@ -26,13 +26,14 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
 
 |--> documentos<br>
   &emsp;| --> outros <br>
-  &emsp;| T8_G4_V3.0_Web_application_document.pdf <br>
+  &emsp;| T8_G4_V3.0_Web_application_document.docx<br>
   &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
-|--> Banco_de_dados<br>
-|--> Public (Frontend)<br>
-|--> scripts de suporte<br>
-|--> app.js<br>
+|--> scr<br>
+  &emsp;| --> Banco_de_dados <br>
+  &emsp;| --> Public (Frontend) <br>
+  &emsp;| --> scripts de suporte <br>
+  &emsp;| --> app.js <br>
 | readme.md<br>
 | license.txt
 
