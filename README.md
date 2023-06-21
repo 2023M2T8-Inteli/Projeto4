@@ -56,9 +56,7 @@ Aqui encontram-se todas as instruções necessárias para a instalação de todo
 3.  No modo administrador, abra o "prompt de comando" ou o "terminal" e, após,  abra a pasta no diretório raiz do repositório clonado e digite o segundo comando:
 
 ```sh
-npm install express
-npm install sqlite3
-npm install multer
+npm i
 ```
 
 Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
