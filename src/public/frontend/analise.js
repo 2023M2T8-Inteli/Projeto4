@@ -7,7 +7,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     var Dados = data;
     let saida = '';
     document.getElementById('tabela').innerHTML = saida; //adiciona "saida" ao elemento 'tabela' no html
-    const table = document.createElement('table'); 
+    const table = document.createElement('table');
     const th = document.createElement('th');
     th.innerHTML = "<td>Viagem|</td><td>Max Força(tf)|</td><td>Min Força(tf)|</td><td>Max Act(mm)|</td><td>Min Act(mm)|</td><td>Max PEG(PSI)|</td><td>Min PEG(PSI)</td>"; //Descreve os elementos que vão ser adicionados no início da tabela
     document.getElementById('tabela').appendChild(th); //adiciona 'th' ao elemtento 'tabela', do html
@@ -21,6 +21,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
       td.innerHTML = i;
       tr.appendChild(td);
 
+      // pega os dados do banco de dados para incluir na tabela 
       td = document.createElement('td');
       td.innerHTML = line.max_forca;
       tr.appendChild(td);
@@ -48,7 +49,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
       table.appendChild(tr); // adiciona a linha tr criada acima na tabela
 
       i += 1 //incrementa i
-      
+
     }
     const resultado = document.querySelector('#tabela');
     resultado.appendChild(table); //adiciona os dados ao elemento com id "tabela" em analise.html
@@ -57,7 +58,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     console.log(error);
   });
 
-  fetch('/info_Vagoes_E') //essa chamada fetch faz praticamente a mesma que a acima, mas seleciona apenas os dados específicos ao vagão E e os traz do banco de dados para uma nova tabela criada 
+fetch('/info_Vagoes_E') //essa chamada fetch faz praticamente a mesma que a acima, mas seleciona apenas os dados específicos ao vagão E e os traz do banco de dados para uma nova tabela criada 
   .then((response) => {
     return response.json();
   })
@@ -67,18 +68,19 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     document.getElementById('tabela2').innerHTML = saida2;
     const table2 = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML ="<td>Viagem</td>|<td>Max Engate(tf)|  </td><td>Min Engate(tf)|  </td><td>Max Act(mm)|  </td><td>Min Act(mm)|  </td><td>Max PEG(PSI)|  </td><td>Min PEG(PSI)</td>" //Descreve os elementos que vão ser adicionados no início da tabela
+    th.innerHTML = "<td>Viagem</td>|<td>Max Engate(tf)|  </td><td>Min Engate(tf)|  </td><td>Max Act(mm)|  </td><td>Min Act(mm)|  </td><td>Max PEG(PSI)|  </td><td>Min PEG(PSI)</td>" //Descreve os elementos que vão ser adicionados no início da tabela
     document.getElementById('tabela2').appendChild(th);
 
-    let i = 1; 
+    let i = 1;
 
     for (let line of Dados) { // cria uma nova linha na tabela para cada linha registrada no banco de dados 
-      const tr2 = document.createElement('tr'); 
+      const tr2 = document.createElement('tr');
 
       let td = document.createElement('td');
       td.innerHTML = i;
       tr2.appendChild(td);
 
+      // pega os dados do banco de dados para incluir na tabela 
       td = document.createElement('td');
       td.innerHTML = line.max_engante;
       tr2.appendChild(td);
@@ -114,7 +116,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     console.log(error);
   });
 
-  fetch('/info_Vagoes_F') //essa chamada fetch faz praticamente a mesma que a acima, mas seleciona apenas os dados específicos ao vagão F e os traz do banco de dados para uma nova tabela criada 
+fetch('/info_Vagoes_F') //essa chamada fetch faz praticamente a mesma que a acima, mas seleciona apenas os dados específicos ao vagão F e os traz do banco de dados para uma nova tabela criada 
   .then((response) => {
     return response.json();
   })
@@ -124,18 +126,19 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     document.getElementById('tabela3').innerHTML = saida3;
     const table3 = document.createElement('table');
     var th = document.createElement('th')
-    th.innerHTML ="<td>Viagem</td>|<td>Max Engate(tf)|  </td><td>Min Engate(tf)|  </td><td>Max Act(mm)|  </td><td>Min Act(mm)|  </td><td>Max PEG(PSI)|  </td><td>Min PEG(PSI)</td>" //Descreve os elementos que vão ser adicionados no início da tabela
+    th.innerHTML = "<td>Viagem</td>|<td>Max Engate(tf)|  </td><td>Min Engate(tf)|  </td><td>Max Act(mm)|  </td><td>Min Act(mm)|  </td><td>Max PEG(PSI)|  </td><td>Min PEG(PSI)</td>" //Descreve os elementos que vão ser adicionados no início da tabela
     document.getElementById('tabela3').appendChild(th);
 
-    let i = 1; 
+    let i = 1;
 
     for (let line of Dados) { // cria uma nova linha na tabela para cada linha registrada no banco de dados 
-      const tr3 = document.createElement('tr'); 
+      const tr3 = document.createElement('tr');
 
       let td = document.createElement('td');
       td.innerHTML = i;
       tr3.appendChild(td);
 
+      // pega os dados do banco de dados para incluir na tabela 
       td = document.createElement('td');
       td.innerHTML = line.max_engante;
       tr3.appendChild(td);
@@ -171,13 +174,13 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     console.log(error);
   });
 
-  
-  window.onload = function () {  //essa função espera o carregamento da pagina para executar o codigo, ela endende as mudanças de valor na barra dropdown de viagem e retorna o valor selecionado
-    const vagao = document.getElementById('menu_vagao');
-    const viagem = document.getElementById('menu_viagem');
-    const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
-    const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
-    viagem.addEventListener('change', () => {
+
+window.onload = function () {  //essa função espera o carregamento da pagina para executar o codigo, ela endende as mudanças de valor na barra dropdown de viagem e retorna o valor selecionado
+  const vagao = document.getElementById('menu_vagao');
+  const viagem = document.getElementById('menu_viagem');
+  const graficoSelecionado1 = document.getElementById('grafico_selecionado1');
+  const graficoSelecionado2 = document.getElementById('grafico_selecionado2');
+  viagem.addEventListener('change', () => {
     const viagemSelecionada = viagem.value;
     changeViagem(viagemSelecionada);
     document.getElementById('menu_vagao').value = "VagaoE"
@@ -208,7 +211,7 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
     const viagemSelecionada = viagem.value;
     vagao.addEventListener('change', () => { //esse eventlistener detecta a mudança do valor selecionado na barra dropdown de vagões e retorna a opção escolida
       const vagaoSelecionado = vagao.value;
-// a partir desse instante, o código compara as duas opções selecionadas no eventListener e devolve ao usuário os graficos de marlov compativeis com os valores de viagem e vagão coerentes
+      // a partir desse instante, o código compara as duas opções selecionadas no eventListener e devolve ao usuário os graficos de marlov compativeis com os valores de viagem e vagão coerentes
       if (viagemSelecionada === "Viagem1" && vagaoSelecionado === "VagaoE") {
         graficoSelecionado1.src = "graficos/Markov - Viagem 1 - E - act.bmp";
         graficoSelecionado2.src = "graficos/Markov - Viagem 1 - E - forca.bmp";
@@ -245,4 +248,5 @@ fetch(url) //essa chamada fetch cria uma tabela na página analise.html, adicion
       }
     });
   });
-;}
+  ;
+}
