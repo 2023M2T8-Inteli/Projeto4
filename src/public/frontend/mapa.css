@@ -42,6 +42,7 @@ html, body {
   left:8vw;
 }
 @media (max-width: 999px) {
+
   .map-controls {
     margin-left: calc(100% - vw);
     display:block;

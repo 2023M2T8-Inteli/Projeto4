@@ -16,9 +16,9 @@
     <script src="analise.js"></script>
   </head>
 
-  <body style="overflow-x: hidden;">
+  <body>
 
-    <div class="content">
+    <div class="content-analise">
       <header>
         <nav>
           <a href="paghome.html" class="link">
@@ -43,9 +43,9 @@
         </nav>
       </header>
       <script src="navbar.js"></script>
-      <div>
+      <div class="conteudo_analise">
         <div id="dropdown">
-          <select id="menu_viagem" class="form-select" style="width:20%;">
+          <select id="menu_viagem" class="form-select">
             <option value="nada"> Selecione a viagem </option>
             <option value="Viagem1">Viagem 1</option>
             <option value="Viagem2">Viagem 2</option>
@@ -53,26 +53,28 @@
             <option value="Viagem4">Viagem 4</option>
             <option value="Viagem5">Viagem 5</option>
           </select>
-          <select id="menu_vagao" class="form-select" style="width:20%;">
+          <select id="menu_vagao" class="form-select">
             <option value="nada"> Selecione o vagão </option>
             <option value="VagaoE">Vagão E</option>
             <option value="VagaoF">Vagão F</option>
           </select>
         </div>
-        <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
-        <br>
-        <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
+
+        <div class="content-graficos"
+          <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
+          <br>
+          <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
+        </div>
+        
+        <div class="tabela-flex">
+          <div id="Titulo1" >DADOS GERAIS DA VIAGEM</div>
+          <div style="margin-bottom: 10vh;"id="tabela"></div>
+          <div id="Titulo2">VAGÃO E</div>
+          <div style="margin-bottom: 10vh;" id="tabela2"></div>
+          <div id="Titulo3">VAGÃO F</div>
+          <div style="margin-bottom: 10vh;" id="tabela3"></div>
+        </div>
       </div>
-      </div>
-      <div class="tabela-flex">
-      <div id="Titulo1" >DADOS GERAIS DA VIAGEM</div>
-      <div id="tabela"></div>
-      <div id="Titulo2">VAGÃO E</div>
-      <div id="tabela2"></div>
-      <div id="Titulo3">VAGÃO F</div>
-      <div id="tabela3"></div>
-    </div>
-    </div>
     
 
     </div>
