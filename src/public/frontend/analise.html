@@ -20,10 +20,10 @@
     <script src="analise.js"></script>
   </head>
 
-  <body>
+  <body style="overflow-x: hidden;">
 
     <div class="content-analise">
-      <header>
+      <header style="z-index: 2;">
         <nav>
           <a href="paghome.html" class="link">
               <img src="images/logoinovtech.png">
@@ -66,22 +66,24 @@
           </select>
         </div>
 
-        <div class="content-graficos"
-          <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
-          <br>
-          <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
+        <div class="itens">
+          <div class="content-graficos" >
+            <img id="grafico_selecionado1" class="graficos" src="graficos/EmBranco.png">
+            <br>
+            <img id="grafico_selecionado2" class="graficos" src="graficos/EmBranco.png">
+          </div>
+          
+          <div class="tabela-flex">
+            <div style="font-size: 22px;" id="Titulo1" >DADOS GERAIS DA VIAGEM</div>
+            <div style="margin-bottom: 10vh;"id="tabela"></div>
+            <div style="font-size: 22px;" id="Titulo2">VAGÃO E</div>
+            <div style="margin-bottom: 10vh;" id="tabela2"></div>
+            <div style="font-size: 22px;" id="Titulo3">VAGÃO F</div>
+            <div style="margin-bottom: 10vh;" id="tabela3"></div>
+          </div>
+                </div>
         </div>
-        
-        <div class="tabela-flex">
-          <div id="Titulo1" >DADOS GERAIS DA VIAGEM</div>
-          <div style="margin-bottom: 10vh;"id="tabela"></div>
-          <div id="Titulo2">VAGÃO E</div>
-          <div style="margin-bottom: 10vh;" id="tabela2"></div>
-          <div id="Titulo3">VAGÃO F</div>
-          <div style="margin-bottom: 10vh;" id="tabela3"></div>
-        </div>
-      </div>
-    
+      
 
     </div>
     <!-- define o footer -->
