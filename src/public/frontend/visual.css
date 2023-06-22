@@ -410,6 +410,7 @@ th {
 
   nav {
     height: 10vh;
+    z-index: 2;
     
 
 

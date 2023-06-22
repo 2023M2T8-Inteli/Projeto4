@@ -120,9 +120,9 @@ header{
 @media (max-width: 999px) {
 
   .map-controls {
-    margin-left: calc(100% - 52vw);
+    margin-left: calc(100% - 62vw);
     display:block;
-    width: 50vw;
+    width: 60vw;
   }
   .button-container{
     width: 50vw;
@@ -140,5 +140,35 @@ header{
   }
   .form-select{
     width: 100%;
+  }
+
+  #valueSelection {
+    width: 40vw;
+  }
+
+  #thresholdValue {
+    width: 40vw;
+  }
+
+  #variableSelection {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 999px) {
+  #select-viagem {
+    width: 80%;
+  }
+
+  #valueSelection {
+    width: 15vw;
+  }
+
+  #thresholdValue {
+    width: 15vw;
+  }
+
+  #variableSelection {
+    width: 15vw;
   }
 }
