@@ -41,6 +41,7 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
   &emsp;| T8_G4_V3.0_Web_application_document.docx<br>
   &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
+  &emsp;| --><a href="https://www.youtube.com/watch?v=PizoBUokD04">Vídeo de funcionamento do projeto</a>
 |--> scr<br>
   &emsp;| --> Banco_de_dados <br>
   &emsp;| --> Public (Frontend) <br>
