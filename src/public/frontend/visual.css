@@ -43,7 +43,7 @@ body {
 /* Configurações barra de rolagem */
 /* Barra de rolagem para navegadores Webkit (Chrome, Safari, Opera) */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
   background-color: rgba(0, 0, 0, 0.116);
   /* Define a cor de fundo transparente */
 }
@@ -53,33 +53,7 @@ body {
   /* Define a cor da barra de rolagem */
 }
 
-/* Barra de rolagem para navegadores Firefox */
-::-moz-scrollbar {
-  width: 8px;
-  background-color: rgba(0, 0, 0, 0.116);
-  /* Define a cor de fundo transparente */
-}
 
-::-moz-scrollbar-thumb {
-  background-color: rgba(28, 166, 181, 0.74);
-  /* Define a cor da barra de rolagem */
-  border-radius: 5px;
-  /* Define o raio de borda da barra de rolagem */
-}
-
-/* Barra de rolagem para navegadores Internet Explorer e Edge */
-::-ms-scrollbar {
-  width: 8px;
-  background-color: rgba(0, 0, 0, 0.116);
-  /* Define a cor de fundo transparente */
-}
-
-::-ms-scrollbar-thumb {
-  background-color: rgba(28, 166, 181, 0.74);
-  /* Define a cor da barra de rolagem */
-  border-radius: 5px;
-  /* Define o raio de borda da barra de rolagem */
-}
 
 
 /* Configurações da NAVBAR */
@@ -87,6 +61,7 @@ a {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  
 }
 
 a:hover {
@@ -412,9 +387,14 @@ th {
   nav {
     height: 10vh;
     z-index: 2;
+    font-size: 12px;
     
 
 
+  }
+  a{
+    margin-right: 6vh;
+    white-space: nowrap;
   }
 
   .nav-list {
@@ -440,6 +420,14 @@ th {
   .mobile-menu {
     display: block;
   }
+  ::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0.116);
+    /* Define a cor de fundo transparente */
+  }
+  
+  
+  
 }
 @keyframes navLinkFade { /*Animação da navbar quando a tela é pequena */
   from {

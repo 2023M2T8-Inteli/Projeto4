@@ -41,7 +41,7 @@ Nosso projeto tem por objetivo sistematizar o processo de apresentação dos dad
   &emsp;| T8_G4_V3.0_Web_application_document.docx<br>
   &emsp;| T8_G4_V3.0_Web_application_document.pdf<br>
 |--> imagens<br>
-  &emsp;| --><a href="https://www.youtube.com/watch?v=PizoBUokD04">Vídeo de funcionamento do projeto</a>
+  &emsp;| --><a href="https://www.youtube.com/watch?v=Ya1ua_Q5COs">Vídeo de funcionamento do projeto</a>
 |--> scr<br>
   &emsp;| --> Banco_de_dados <br>
   &emsp;| --> Public (Frontend) <br>
@@ -75,12 +75,12 @@ npm i
 Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
 
 ```sh
-node app.js
+node src/backend/app.js
 ```
 5. Agora você pode acessar a aplicação através do link http://localhost:1234/
 6. O servidor está online.
 
-OBS: O site também pode ser acessado através desse link: https://j657tr-3000.csb.app/
+OBS: O site também pode ser acessado através desse link: https://p3dnrz-3000.csb.app/
 
 
 ## 🗃 Histórico de lançamentos
