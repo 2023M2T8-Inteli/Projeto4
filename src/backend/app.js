@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 const hostname = '127.0.0.1';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 1234;
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'src/Banco_de_dados/dbProjeto.db';
 const multer = require('multer');
